@@ -747,6 +747,28 @@
       vertical-align: middle;
     }
 
+    .pub-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      font-size: 0.83rem;
+      flex-wrap: wrap;
+    }
+
+    .pub-link-item {
+      color: var(--cardinal);
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .pub-link-item:hover {
+      text-decoration: underline;
+      color: var(--cardinal-soft);
+    }
+
     /* FILLET STATS */
     .stats-grid {
       display: grid;
@@ -892,7 +914,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#research">Research</a></li>
-        <li><a href="#toolkit">Toolkit</a></li>
+        <li><a href="#toolkit">AI Toolkit</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -953,13 +975,13 @@
           </article>
 
           <article class="research-card">
-            <span class="research-tag">OBGYN</span>
+            <span class="research-tag">Women's Health</span>
             <h3 style="margin-top: 1rem;">Predicting Missed Ovarian Torsion</h3>
             <p>Ovarian torsion is one of the most commonly missed ED diagnoses, and a miss often costs the patient her ovary. We are leveraging Stanford's full hospital dataset to build a predictive tool that flags at-risk presentations in real time.</p>
           </article>
 
           <article class="research-card">
-            <span class="research-tag">Reproductive Medicine</span>
+            <span class="research-tag">Women's Health</span>
             <h3 style="margin-top: 1rem;">Premature Ovulation in IVF</h3>
             <p>Premature ovulation is a leading cause of IVF cycle cancellation and lost embryos, with no reliable way to flag at-risk patients before stimulation. Working with Dr. Lusine Aghajanova on Stanford's live-birth-outcome dataset.</p>
           </article>
@@ -1429,6 +1451,10 @@ Before drawing, list which lecture slide(s) each category came from so I can ver
             <div class="pub-content">
               <div class="pub-title">JAK Inhibition with Tofacitinib Rapidly Increases Contractile Force in Human Skeletal Muscle</div>
               <div class="pub-venue"><em>Life Science Alliance</em>, 2024;7(11):e202402885</div>
+              <div class="pub-links">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/39122555/" target="_blank" rel="noopener" class="pub-link-item">PubMed →</a>
+                <a href="https://doi.org/10.26508/lsa.202402885" target="_blank" rel="noopener" class="pub-link-item">DOI →</a>
+              </div>
             </div>
           </li>
 
@@ -1437,6 +1463,10 @@ Before drawing, list which lecture slide(s) each category came from so I can ver
             <div class="pub-content">
               <div class="pub-title">Pavement Ant Extract is a Chemotaxis Repellent for <em>C. elegans</em> <span class="pub-role">Co-First Author</span></div>
               <div class="pub-venue"><em>microPublication Biology</em>, 2024</div>
+              <div class="pub-links">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/38596360/" target="_blank" rel="noopener" class="pub-link-item">PubMed →</a>
+                <a href="https://doi.org/10.17912/micropub.biology.001146" target="_blank" rel="noopener" class="pub-link-item">DOI →</a>
+              </div>
             </div>
           </li>
 
@@ -1444,7 +1474,11 @@ Before drawing, list which lecture slide(s) each category came from so I can ver
             <span class="pub-year">2022</span>
             <div class="pub-content">
               <div class="pub-title">Positron Emission Tomography/Computed Tomography Differentiates Resectable Thymoma from Anterior Mediastinal Lymphoma</div>
-              <div class="pub-venue"><em>Journal of Thoracic and Cardiovascular Surgery</em>, 2022</div>
+              <div class="pub-venue"><em>Journal of Thoracic and Cardiovascular Surgery</em>, 2022;165(1):371-381.e1</div>
+              <div class="pub-links">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/35568521/" target="_blank" rel="noopener" class="pub-link-item">PubMed →</a>
+                <a href="https://doi.org/10.1016/j.jtcvs.2022.02.055" target="_blank" rel="noopener" class="pub-link-item">DOI →</a>
+              </div>
             </div>
           </li>
 
@@ -1452,7 +1486,11 @@ Before drawing, list which lecture slide(s) each category came from so I can ver
             <span class="pub-year">2022</span>
             <div class="pub-content">
               <div class="pub-title">Overexpression of Thioredoxin-2 Attenuates Age-Related Muscle Loss by Suppressing Mitochondrial Oxidative Stress and Apoptosis</div>
-              <div class="pub-venue"><em>JCSM Rapid Communications</em>, 2022;5:130–145</div>
+              <div class="pub-venue"><em>JCSM Rapid Communications</em>, 2022;5(1):130–145</div>
+              <div class="pub-links">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/40236683/" target="_blank" rel="noopener" class="pub-link-item">PubMed →</a>
+                <a href="https://doi.org/10.1002/rco2.57" target="_blank" rel="noopener" class="pub-link-item">DOI →</a>
+              </div>
             </div>
           </li>
 
@@ -1461,6 +1499,10 @@ Before drawing, list which lecture slide(s) each category came from so I can ver
             <div class="pub-content">
               <div class="pub-title">Rationale and Design of a Mechanistic Clinical Trial of JAK Inhibition to Prevent Ventilator-Induced Diaphragm Dysfunction</div>
               <div class="pub-venue"><em>Respiratory Medicine</em>, 2021;189:106620</div>
+              <div class="pub-links">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/34655959/" target="_blank" rel="noopener" class="pub-link-item">PubMed →</a>
+                <a href="https://doi.org/10.1016/j.rmed.2021.106620" target="_blank" rel="noopener" class="pub-link-item">DOI →</a>
+              </div>
             </div>
           </li>
         </ul>
