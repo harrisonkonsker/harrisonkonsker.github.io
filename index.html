@@ -716,76 +716,94 @@
     <section class="block" id="toolkit">
       <div class="container">
         <div class="section-eyebrow">Toolkit</div>
-        <h2>Open AI tools for clinicians and trainees.</h2>
-        <p class="research-lede">A small but growing collection of prompts, agents, and Claude skills I've built for myself and shared with the medical community. Free to use, copy, modify, and improve. Each tool links to a public GitHub repo with the source.</p>
+        <h2>Five workflows for AI in medical education.</h2>
+        <p class="research-lede">These are the tools I use to study medicine at Stanford. Three are custom Claude skills I built. Two are workflows around tools you probably already have. All free to use, modify, and share. Click any tool for step-by-step instructions.</p>
 
         <div class="toolkit-grid">
 
-          <!-- TOOL 1 -->
+          <!-- TOOL 1: Lecture Distiller -->
           <article class="tool-card">
             <div class="tool-header">
-              <div class="tool-name">Clinical Reasoning Tutor</div>
-              <span class="tool-type">Prompt</span>
+              <div class="tool-name">Lecture Distiller</div>
+              <span class="tool-type">Claude Skill</span>
             </div>
-            <p class="tool-desc">A guided Socratic prompt that walks medical students through differential diagnoses without giving away the answer. Built for self-study and small-group teaching.</p>
+            <p class="tool-desc">Turn 120 disorganized slides into 4 cleanly organized sections: pathophysiology, clinical presentation, differential diagnosis, clinical correlations. <strong>3 hours → 5 minutes per lecture.</strong></p>
             <div class="tool-meta">
               <span class="tool-tag">Med Student</span>
               <span class="tool-tag">Preclinical</span>
-              <span class="tool-tag">Teaching</span>
+              <span class="tool-tag">Custom Skill</span>
             </div>
-            <a href="#" class="tool-link">View on GitHub <span class="arrow">→</span></a>
+            <a href="https://github.com/harrisonkonsker/harrisonkonsker.github.io/blob/main/toolkit/01-lecture-distiller.md" target="_blank" rel="noopener" class="tool-link">View instructions <span class="arrow">→</span></a>
           </article>
 
-          <!-- TOOL 2 -->
+          <!-- TOOL 2: Mnemonic Image Generator -->
           <article class="tool-card">
             <div class="tool-header">
-              <div class="tool-name">OSCE Practice Partner</div>
-              <span class="tool-type">Agent</span>
+              <div class="tool-name">Mnemonic Image Generator</div>
+              <span class="tool-type">Claude + Gemini</span>
             </div>
-            <p class="tool-desc">A Claude agent that simulates standardized patient encounters for OSCE practice, gives structured feedback on history-taking, communication, and clinical reasoning.</p>
+            <p class="tool-desc">Turn a hard-to-remember medical term into a single visual scene that encodes both the term's name and its meaning. <strong>140 mnemonics created this year.</strong> Built for terms that refuse to stick.</p>
             <div class="tool-meta">
               <span class="tool-tag">Med Student</span>
-              <span class="tool-tag">Clinical Skills</span>
+              <span class="tool-tag">Memory</span>
+              <span class="tool-tag">Custom Skill</span>
             </div>
-            <a href="#" class="tool-link">View on GitHub <span class="arrow">→</span></a>
+            <a href="https://github.com/harrisonkonsker/harrisonkonsker.github.io/blob/main/toolkit/02-mnemonic-image-generator.md" target="_blank" rel="noopener" class="tool-link">View instructions <span class="arrow">→</span></a>
           </article>
 
-          <!-- TOOL 3 -->
+          <!-- TOOL 3: Anki Card Auto-Maker -->
           <article class="tool-card">
             <div class="tool-header">
-              <div class="tool-name">Lecture-to-Study-Guide</div>
+              <div class="tool-name">Anki Card Auto-Maker</div>
               <span class="tool-type">Claude Skill</span>
             </div>
-            <p class="tool-desc">Drop in a lecture PDF and learning objectives, get back a premium-formatted Word study guide with tiered emphasis, callout boxes, and an exam-prep summary. Stanford Med workflow.</p>
+            <p class="tool-desc">Upload a lecture slide, get back finished Anki cards in perfect format. The bottleneck of making cards is gone. <strong>12 hours → 10 minutes per lecture.</strong></p>
             <div class="tool-meta">
               <span class="tool-tag">Med Student</span>
-              <span class="tool-tag">Anti-hallucination</span>
+              <span class="tool-tag">Spaced Repetition</span>
+              <span class="tool-tag">Custom Skill</span>
             </div>
-            <a href="#" class="tool-link">View on GitHub <span class="arrow">→</span></a>
+            <a href="https://github.com/harrisonkonsker/harrisonkonsker.github.io/blob/main/toolkit/03-anki-card-maker.md" target="_blank" rel="noopener" class="tool-link">View instructions <span class="arrow">→</span></a>
           </article>
 
-          <!-- TOOL 4 -->
+          <!-- TOOL 4: NotebookLM Podcast -->
           <article class="tool-card">
             <div class="tool-header">
-              <div class="tool-name">Clinical Paper Decoder</div>
-              <span class="tool-type">Prompt</span>
+              <div class="tool-name">Lecture-as-Podcast</div>
+              <span class="tool-type">NotebookLM Workflow</span>
             </div>
-            <p class="tool-desc">Paste a dense clinical paper, get back a structured summary: methods, key results, statistical caveats, and a one-paragraph "what this means at the bedside."</p>
+            <p class="tool-desc">Turn any lecture into a 15-minute conversational podcast you can listen to on your commute or workout. Interactive mode lets you interrupt the hosts with questions in real time.</p>
             <div class="tool-meta">
-              <span class="tool-tag">Researcher</span>
-              <span class="tool-tag">Clinician</span>
+              <span class="tool-tag">Med Student</span>
+              <span class="tool-tag">Audio Learning</span>
+              <span class="tool-tag">Free Tool</span>
             </div>
-            <a href="#" class="tool-link">View on GitHub <span class="arrow">→</span></a>
+            <a href="https://github.com/harrisonkonsker/harrisonkonsker.github.io/blob/main/toolkit/04-notebooklm-podcast.md" target="_blank" rel="noopener" class="tool-link">View instructions <span class="arrow">→</span></a>
+          </article>
+
+          <!-- TOOL 5: Diagram Generator -->
+          <article class="tool-card">
+            <div class="tool-header">
+              <div class="tool-name">Lecture-to-Diagram</div>
+              <span class="tool-type">ChatGPT Workflow</span>
+            </div>
+            <p class="tool-desc">When the lecture doesn't click, generate a visual diagram organized by the most important categories of the content. AI didn't change what's true. It changed how my brain perceives it.</p>
+            <div class="tool-meta">
+              <span class="tool-tag">Visual Learner</span>
+              <span class="tool-tag">Mechanism-heavy</span>
+              <span class="tool-tag">Free Tool</span>
+            </div>
+            <a href="https://github.com/harrisonkonsker/harrisonkonsker.github.io/blob/main/toolkit/05-diagram-generator.md" target="_blank" rel="noopener" class="tool-link">View instructions <span class="arrow">→</span></a>
           </article>
 
         </div>
 
         <div class="toolkit-cta">
           <div class="toolkit-cta-text">
-            <strong>Want the full library?</strong>
-            <span>The complete set of prompts, skills, and agents lives on GitHub. Star the repo to follow new tools as I publish them.</span>
+            <strong>The bigger idea</strong>
+            <span>Using AI as a search engine gives you an answer. Using AI as a workflow gives you a personalized and more efficient way to learn. The next investment in AI medical education should be better workflows — built by the school, with students, for every student.</span>
           </div>
-          <a href="#" class="btn btn-primary">View repository <span class="arrow">→</span></a>
+          <a href="https://github.com/harrisonkonsker/harrisonkonsker.github.io/tree/main/toolkit" target="_blank" rel="noopener" class="btn btn-primary">Browse all on GitHub <span class="arrow">→</span></a>
         </div>
       </div>
     </section>
