@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harrison B. Konsker — Stanford MD Candidate · Clinical AI Researcher</title>
+  <meta name="description" content="Harrison B. Konsker is an MD Candidate at Stanford School of Medicine concentrating in Artificial Intelligence and Computational Biomedicine. He builds AI tools that reach the bedside at the HealthRex Lab, and is the founder of Fillet for Friends, a national 501(c)(3)." />
+  <meta property="og:title" content="Harrison B. Konsker — Stanford MD Candidate · Clinical AI Researcher" />
+  <meta property="og:description" content="Building AI tools that reach the bedside. Stanford MD Candidate · HealthRex Lab · Founder, Fillet for Friends 501(c)(3)." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #FAFAF7;
+      --bg-alt: #F2F0EA;
+      --ink: #0E0E0E;
+      --ink-soft: #4A4A4A;
+      --ink-faint: #8B8B8B;
+      --line: #E5E2DA;
+      --cardinal: #8C1515;
+      --cardinal-soft: #B23A3A;
+      --radius: 8px;
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+    h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); margin-bottom: 1.5rem; }
+    h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+
+    a {
+      color: var(--cardinal);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover { color: var(--cardinal-soft); }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* NAV */
+    nav.main {
+      position: sticky;
+      top: 0;
+      background: rgba(250, 250, 247, 0.9);
+      backdrop-filter: saturate(180%) blur(12px);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      border-bottom: 1px solid var(--line);
+      z-index: 100;
+      padding: 1rem 0;
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .brand-short { display: none; }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    @media (max-width: 820px) {
+      .brand-full { display: none; }
+      .brand-short { display: inline; }
+      .nav-links { gap: 1.25rem; }
+      .nav-links a { font-size: 0.85rem; }
+    }
+
+    @media (max-width: 540px) {
+      nav.main { padding: 0.6rem 0; }
+      .nav-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .brand { font-size: 1rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.8rem; }
+    }
+
+    /* HERO */
+    .hero {
+      padding: 6rem 0 5rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (max-width: 820px) {
+      .hero { padding: 4rem 0 3rem; }
+      .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    .hero h1 {
+      margin-bottom: 1.25rem;
+    }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--cardinal);
+      margin-bottom: 1rem;
+    }
+
+    .lede {
+      font-size: 1.15rem;
+      color: var(--ink-soft);
+      max-width: 540px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-radius: var(--radius);
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: var(--bg);
+      border-color: var(--ink);
+    }
+
+    .btn-primary:hover {
+      background: var(--cardinal);
+      border-color: var(--cardinal);
+      color: var(--bg);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .btn-ghost:hover {
+      background: var(--ink);
+      color: var(--bg);
+      border-color: var(--ink);
+    }
+
+    .portrait {
+      aspect-ratio: 4 / 5;
+      background: var(--bg-alt);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink-faint);
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* SECTION */
+    section.block {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    @media (max-width: 720px) {
+      section.block { padding: 3.5rem 0; }
+    }
+
+    .section-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--cardinal);
+      margin-bottom: 0.75rem;
+    }
+
+    .prose p {
+      margin-bottom: 1.25rem;
+      color: var(--ink-soft);
+      max-width: 720px;
+      font-size: 1.05rem;
+    }
+
+    .prose p:last-child { margin-bottom: 0; }
+
+    /* RESEARCH CARDS */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .research-grid { grid-template-columns: 1fr; }
+    }
+
+    .research-card {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: all 0.2s ease;
+    }
+
+    .research-card:hover {
+      border-color: var(--ink);
+      transform: translateY(-2px);
+    }
+
+    .research-card h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .research-card p {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      margin-bottom: 1rem;
+    }
+
+    .research-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--cardinal);
+      padding: 0.25rem 0.6rem;
+      background: rgba(140, 21, 21, 0.06);
+      border-radius: 4px;
+    }
+
+    .research-lede {
+      max-width: 720px;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+    }
+
+    /* TOOLKIT */
+    .toolkit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (max-width: 820px) {
+      .toolkit-grid { grid-template-columns: 1fr; }
+    }
+
+    .tool-card {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s ease;
+    }
+
+    .tool-card:hover {
+      border-color: var(--ink);
+      transform: translateY(-2px);
+    }
+
+    .tool-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .tool-name {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .tool-type {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      padding: 0.2rem 0.55rem;
+      background: var(--bg-alt);
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .tool-desc {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .tool-meta {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .tool-tag {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--ink-soft);
+      padding: 0.2rem 0.55rem;
+      background: var(--bg-alt);
+      border-radius: 3px;
+    }
+
+    .tool-link {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--cardinal);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .tool-link .arrow { transition: transform 0.2s ease; }
+    .tool-card:hover .tool-link .arrow { transform: translateX(3px); }
+
+    .toolkit-cta {
+      margin-top: 2.5rem;
+      padding: 1.75rem;
+      background: var(--bg-alt);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .toolkit-cta-text {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .toolkit-cta-text strong {
+      display: block;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--ink);
+    }
+
+    .toolkit-cta-text span {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    /* PUBLICATIONS */
+    .pubs-list {
+      list-style: none;
+      margin-top: 2rem;
+    }
+
+    .pubs-list li {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .pubs-list li:last-child { border-bottom: none; }
+
+    .pub-year {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--ink-faint);
+      min-width: 56px;
+    }
+
+    .pub-content { }
+
+    .pub-title {
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+      font-size: 1.02rem;
+    }
+
+    .pub-venue {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+
+    .pub-role {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cardinal);
+      margin-left: 0.5rem;
+      padding: 0.15rem 0.5rem;
+      background: rgba(140, 21, 21, 0.08);
+      border-radius: 3px;
+      vertical-align: middle;
+    }
+
+    /* FILLET STATS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (max-width: 720px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .stat {
+      padding: 1.5rem;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .stat-num {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.02em;
+    }
+
+    /* SPEAKING */
+    .speaking-card {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-top: 1.5rem;
+      max-width: 720px;
+    }
+
+    .speaking-card .pub-title {
+      font-size: 1.15rem;
+      margin-bottom: 0.4rem;
+    }
+
+    /* HONORS */
+    .honors-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 720px) {
+      .honors-grid { grid-template-columns: 1fr; }
+    }
+
+    .honor-item {
+      padding: 1rem 1.25rem;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .honor-name {
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.15rem;
+      font-size: 0.98rem;
+    }
+
+    .honor-detail {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 720px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    .contact-card {
+      padding: 1.5rem;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      transition: all 0.2s ease;
+    }
+
+    .contact-card:hover {
+      border-color: var(--ink);
+      transform: translateY(-2px);
+    }
+
+    .contact-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-value {
+      font-size: 1rem;
+      color: var(--ink);
+      font-weight: 500;
+      word-break: break-word;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 2.5rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--ink-faint);
+    }
+
+    /* UTILITY */
+    .arrow { transition: transform 0.2s ease; }
+    .btn:hover .arrow { transform: translateX(3px); }
+  </style>
+</head>
+<body>
+
+  <nav class="main">
+    <div class="nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-full">Harrison B. Konsker</span>
+        <span class="brand-short">H. Konsker</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#toolkit">Toolkit</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Stanford MD Candidate · Clinical AI Researcher</div>
+          <h1>Building AI tools that reach the bedside.</h1>
+          <p class="lede">
+            I am an MD Candidate at Stanford School of Medicine, concentrating in Artificial Intelligence and Computational Biomedicine. I work at the <a href="https://healthrex.stanford.edu/" target="_blank" rel="noopener">HealthRex Lab</a> with Dr. Jonathan Chen, where I build machine learning systems that support real-time clinical decision-making.
+          </p>
+          <div class="hero-ctas">
+            <a href="#research" class="btn btn-primary">View research <span class="arrow">→</span></a>
+            <a href="#about" class="btn btn-ghost">Read about me</a>
+          </div>
+        </div>
+        <div class="portrait">
+          <!-- Replace src with your headshot file (e.g., assets/portrait.jpg) -->
+          <span>Add headshot of Harrison B. Konsker here<br /><small>(replace portrait div in HTML)</small></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="block" id="about">
+      <div class="container">
+        <div class="section-eyebrow">About</div>
+        <h2>How a patient became a physician-builder.</h2>
+        <div class="prose">
+          <p>Thirteen years ago, I was diagnosed with a rare and aggressive soft tissue tumor. Ten hospitals across the country insisted that intensive chemotherapy was my only option, until I arrived at Stanford Medicine. There, my care team proposed a revolutionary treatment: high-intensity focused ultrasound, a non-invasive procedure that uses sound waves to destroy tumor tissue. I became the sixth patient ever to receive it. That decision changed the course of my life.</p>
+
+          <p>Today, I am back at Stanford as an MD Candidate, concentrating in Artificial Intelligence and Computational Biomedicine. I work in the HealthRex Lab with Dr. Jonathan Chen, where I build machine learning systems that support real-time clinical decision-making. My current projects predict antibiotic resistance in the emergency department, flag missed ovarian torsion, and identify patients at risk during IVF. The thread across this work is the same: using clinical data to support the highest-stakes decisions in medicine.</p>
+
+          <p>My prior research bridges oncology, genomics, and translational science. I spent a year at the <strong>Weizmann Institute of Science</strong> investigating low-fidelity DNA polymerases as therapeutic targets in EGFR-mutated lung cancer, and four years at <strong>Stanford's Division of Thoracic Surgery</strong> with Dr. Joseph Shrager, where my CRISPR/Cas9 work formed the basis of my undergraduate Honors Thesis and a co-first-author manuscript currently under review at <em>Molecular Therapy: Oncology</em>.</p>
+
+          <p>Outside the lab, I am the co-founder and president of <strong>Fillet for Friends</strong>, a national 501(c)(3) addressing food insecurity through wild-caught protein distribution. Since 2014, our team has raised over $550,000 and delivered more than 100,000 meals across four chapters.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="block" id="research">
+      <div class="container">
+        <div class="section-eyebrow">Research</div>
+        <h2>Current projects at HealthRex Lab.</h2>
+        <p class="research-lede">Working with Dr. Jonathan H. Chen at the Stanford Center for Biomedical Informatics Research to develop machine learning systems that support real-time clinical decision-making.</p>
+
+        <div class="research-grid">
+          <article class="research-card">
+            <span class="research-tag">NIH R01</span>
+            <h3 style="margin-top: 1rem;">Antibiotic Decision Support at the ED</h3>
+            <p>Patients with suspected infections wait up to four days for culture results, forcing empiric broad-spectrum prescribing and accelerating antimicrobial resistance. We are building ML models that predict the likely organism and its resistance profile at the moment of ED presentation.</p>
+          </article>
+
+          <article class="research-card">
+            <span class="research-tag">Emergency Medicine</span>
+            <h3 style="margin-top: 1rem;">Predicting Missed Ovarian Torsion</h3>
+            <p>Ovarian torsion is one of the most commonly missed ED diagnoses, and a miss often costs the patient her ovary. We are leveraging Stanford's full hospital dataset to build a predictive tool that flags at-risk presentations in real time.</p>
+          </article>
+
+          <article class="research-card">
+            <span class="research-tag">Reproductive Medicine</span>
+            <h3 style="margin-top: 1rem;">Premature Ovulation in IVF</h3>
+            <p>Premature ovulation is a leading cause of IVF cycle cancellation and lost embryos, with no reliable way to flag at-risk patients before stimulation. Working with Dr. Lusine Aghajanova on Stanford's live-birth-outcome dataset.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOLKIT -->
+    <section class="block" id="toolkit">
+      <div class="container">
+        <div class="section-eyebrow">Toolkit</div>
+        <h2>Open AI tools for clinicians and trainees.</h2>
+        <p class="research-lede">A small but growing collection of prompts, agents, and Claude skills I've built for myself and shared with the medical community. Free to use, copy, modify, and improve. Each tool links to a public GitHub repo with the source.</p>
+
+        <div class="toolkit-grid">
+
+          <!-- TOOL 1 -->
+          <article class="tool-card">
+            <div class="tool-header">
+              <div class="tool-name">Clinical Reasoning Tutor</div>
+              <span class="tool-type">Prompt</span>
+            </div>
+            <p class="tool-desc">A guided Socratic prompt that walks medical students through differential diagnoses without giving away the answer. Built for self-study and small-group teaching.</p>
+            <div class="tool-meta">
+              <span class="tool-tag">Med Student</span>
+              <span class="tool-tag">Preclinical</span>
+              <span class="tool-tag">Teaching</span>
+            </div>
+            <a href="#" class="tool-link">View on GitHub <span class="arrow">→</span></a>
+          </article>
+
+          <!-- TOOL 2 -->
+          <article class="tool-card">
+            <div class="tool-header">
+              <div class="tool-name">OSCE Practice Partner</div>
+              <span class="tool-type">Agent</span>
+            </div>
+            <p class="tool-desc">A Claude agent that simulates standardized patient encounters for OSCE practice, gives structured feedback on history-taking, communication, and clinical reasoning.</p>
+            <div class="tool-meta">
+              <span class="tool-tag">Med Student</span>
+              <span class="tool-tag">Clinical Skills</span>
+            </div>
+            <a href="#" class="tool-link">View on GitHub <span class="arrow">→</span></a>
+          </article>
+
+          <!-- TOOL 3 -->
+          <article class="tool-card">
+            <div class="tool-header">
+              <div class="tool-name">Lecture-to-Study-Guide</div>
+              <span class="tool-type">Claude Skill</span>
+            </div>
+            <p class="tool-desc">Drop in a lecture PDF and learning objectives, get back a premium-formatted Word study guide with tiered emphasis, callout boxes, and an exam-prep summary. Stanford Med workflow.</p>
+            <div class="tool-meta">
+              <span class="tool-tag">Med Student</span>
+              <span class="tool-tag">Anti-hallucination</span>
+            </div>
+            <a href="#" class="tool-link">View on GitHub <span class="arrow">→</span></a>
+          </article>
+
+          <!-- TOOL 4 -->
+          <article class="tool-card">
+            <div class="tool-header">
+              <div class="tool-name">Clinical Paper Decoder</div>
+              <span class="tool-type">Prompt</span>
+            </div>
+            <p class="tool-desc">Paste a dense clinical paper, get back a structured summary: methods, key results, statistical caveats, and a one-paragraph "what this means at the bedside."</p>
+            <div class="tool-meta">
+              <span class="tool-tag">Researcher</span>
+              <span class="tool-tag">Clinician</span>
+            </div>
+            <a href="#" class="tool-link">View on GitHub <span class="arrow">→</span></a>
+          </article>
+
+        </div>
+
+        <div class="toolkit-cta">
+          <div class="toolkit-cta-text">
+            <strong>Want the full library?</strong>
+            <span>The complete set of prompts, skills, and agents lives on GitHub. Star the repo to follow new tools as I publish them.</span>
+          </div>
+          <a href="#" class="btn btn-primary">View repository <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section class="block" id="publications">
+      <div class="container">
+        <div class="section-eyebrow">Publications</div>
+        <h2>Peer-reviewed work.</h2>
+
+        <ul class="pubs-list">
+          <li>
+            <span class="pub-year">2026</span>
+            <div class="pub-content">
+              <div class="pub-title">Selective Inhibition of EGFR-Mutated Lung Cancer Cell Proliferation through CRISPR/Cas9 Targeting <span class="pub-role">Co-First Author</span></div>
+              <div class="pub-venue"><em>Molecular Therapy: Oncology</em> · Manuscript submitted</div>
+            </div>
+          </li>
+
+          <li>
+            <span class="pub-year">2026</span>
+            <div class="pub-content">
+              <div class="pub-title">Off-Label Performance of Three Published Blood Culture Decision Rules in a Pediatric Emergency Department</div>
+              <div class="pub-venue"><em>JAMA</em> · Manuscript submitted</div>
+            </div>
+          </li>
+
+          <li>
+            <span class="pub-year">2026</span>
+            <div class="pub-content">
+              <div class="pub-title">Cultryxmini: An Age-Banded Score for Pediatric Emergency Department Blood Culture Stewardship</div>
+              <div class="pub-venue">Manuscript in submission · HealthRex Lab</div>
+            </div>
+          </li>
+
+          <li>
+            <span class="pub-year">2026</span>
+            <div class="pub-content">
+              <div class="pub-title">External Validation of Machine Learning for Antimicrobial Susceptibility Prediction Across Three Health Systems and Culture Types</div>
+              <div class="pub-venue">Manuscript in submission · HealthRex Lab</div>
+            </div>
+          </li>
+
+          <li>
+            <span class="pub-year">2024</span>
+            <div class="pub-content">
+              <div class="pub-title">JAK Inhibition with Tofacitinib Rapidly Increases Contractile Force in Human Skeletal Muscle</div>
+              <div class="pub-venue"><em>Life Science Alliance</em>, 2024;7(11):e202402885</div>
+            </div>
+          </li>
+
+          <li>
+            <span class="pub-year">2024</span>
+            <div class="pub-content">
+              <div class="pub-title">Pavement Ant Extract is a Chemotaxis Repellent for <em>C. elegans</em> <span class="pub-role">Co-First Author</span></div>
+              <div class="pub-venue"><em>microPublication Biology</em>, 2024</div>
+            </div>
+          </li>
+
+          <li>
+            <span class="pub-year">2022</span>
+            <div class="pub-content">
+              <div class="pub-title">Positron Emission Tomography/Computed Tomography Differentiates Resectable Thymoma from Anterior Mediastinal Lymphoma</div>
+              <div class="pub-venue"><em>Journal of Thoracic and Cardiovascular Surgery</em>, 2022</div>
+            </div>
+          </li>
+
+          <li>
+            <span class="pub-year">2022</span>
+            <div class="pub-content">
+              <div class="pub-title">Overexpression of Thioredoxin-2 Attenuates Age-Related Muscle Loss by Suppressing Mitochondrial Oxidative Stress and Apoptosis</div>
+              <div class="pub-venue"><em>JCSM Rapid Communications</em>, 2022;5:130–145</div>
+            </div>
+          </li>
+
+          <li>
+            <span class="pub-year">2021</span>
+            <div class="pub-content">
+              <div class="pub-title">Rationale and Design of a Mechanistic Clinical Trial of JAK Inhibition to Prevent Ventilator-Induced Diaphragm Dysfunction</div>
+              <div class="pub-venue"><em>Respiratory Medicine</em>, 2021;189:106620</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SPEAKING -->
+    <section class="block" id="speaking">
+      <div class="container">
+        <div class="section-eyebrow">Invited Talks</div>
+        <h2>Speaking.</h2>
+        <div class="speaking-card">
+          <div class="pub-title">AI in Preclinical Education</div>
+          <div class="pub-venue">Stanford AI in Medical Education Symposium · June 2026 · Invited lightning talk (~1,000 attendees)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILLET FOR FRIENDS -->
+    <section class="block" id="fillet">
+      <div class="container">
+        <div class="section-eyebrow">Founder</div>
+        <h2>Fillet for Friends.</h2>
+        <p class="research-lede">A national 501(c)(3) addressing food insecurity through wild-caught protein distribution. I co-founded the organization in 2014 and currently serve as president, leading a 10-person leadership team across four chapters.</p>
+
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-num">$550K+</div>
+            <div class="stat-label">Raised in funding and in-kind contributions</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">100K+</div>
+            <div class="stat-label">Meals delivered to food-insecure communities</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">500+</div>
+            <div class="stat-label">Volunteers engaged across four regional chapters</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">10+ yrs</div>
+            <div class="stat-label">Operating since 2014, still growing today</div>
+          </div>
+        </div>
+
+        <p class="research-lede" style="margin-top: 2.5rem;">Endorsed by the Florida Fish and Wildlife Conservation Commission and U.S. Representative Ted Deutch (Florida 22nd District).</p>
+      </div>
+    </section>
+
+    <!-- HONORS -->
+    <section class="block" id="honors">
+      <div class="container">
+        <div class="section-eyebrow">Honors</div>
+        <h2>Recognition.</h2>
+
+        <div class="honors-grid">
+          <div class="honor-item">
+            <div class="honor-name">Phi Beta Kappa</div>
+            <div class="honor-detail">Top 10% of Stanford Graduating Class · 2024</div>
+          </div>
+          <div class="honor-item">
+            <div class="honor-name">Firestone Medal for Excellence in Undergraduate Research</div>
+            <div class="honor-detail">Top 10% of Honors Theses, Stanford University · 2024</div>
+          </div>
+          <div class="honor-item">
+            <div class="honor-name">Joshua Lederberg Award</div>
+            <div class="honor-detail">Top 5% of Human Biology Seniors, Stanford · 2024</div>
+          </div>
+          <div class="honor-item">
+            <div class="honor-name">Kirsten Frohnmayer Human Biology Prize</div>
+            <div class="honor-detail">Top Junior, Human Biology, Stanford · 2023</div>
+          </div>
+          <div class="honor-item">
+            <div class="honor-name">Stanford MedScholars Award</div>
+            <div class="honor-detail">$15,800 research funding · 2025</div>
+          </div>
+          <div class="honor-item">
+            <div class="honor-name">Bio-X Undergraduate Research Fellowship</div>
+            <div class="honor-detail">Stanford Bio-X · $9,000 · 2022</div>
+          </div>
+          <div class="honor-item">
+            <div class="honor-name">VPUE Major Grant for Undergraduate Research</div>
+            <div class="honor-detail">Stanford · $9,000 · 2021</div>
+          </div>
+          <div class="honor-item">
+            <div class="honor-name">Masa Fellowship &amp; Scholarship</div>
+            <div class="honor-detail">Weizmann Institute of Science · 2024</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="block" id="contact">
+      <div class="container">
+        <div class="section-eyebrow">Contact</div>
+        <h2>Get in touch.</h2>
+        <p class="research-lede">I am always open to conversations with clinicians, researchers, founders, and operators working at the intersection of medicine and machine learning. If your work touches clinical decision-making, computational biomedicine, or how we train the next generation of physicians, I would love to connect.</p>
+
+        <div class="contact-grid">
+          <a href="mailto:hkonsker@stanford.edu" class="contact-card">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">hkonsker@stanford.edu</div>
+          </a>
+          <a href="https://www.linkedin.com/in/harrisonkonsker/" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">@harrisonkonsker</div>
+          </a>
+          <a href="https://healthrex.stanford.edu/" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-label">Lab</div>
+            <div class="contact-value">HealthRex Lab, Stanford</div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      &copy; <span id="year"></span> Harrison B. Konsker · Stanford, California
+    </div>
+  </footer>
+
+  <script>
+    // Auto-update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
