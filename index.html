@@ -439,6 +439,172 @@
       font-size: 0.95rem;
     }
 
+    /* TOOLKIT INSTRUCTIONS */
+    .instructions-block {
+      margin-top: 3rem;
+    }
+
+    .instructions-block h3.instructions-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      color: var(--ink);
+    }
+
+    details.tool-detail {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--bg);
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    details.tool-detail[open] {
+      border-color: var(--ink);
+    }
+
+    details.tool-detail summary {
+      padding: 1.25rem 1.5rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-family: 'Inter', sans-serif;
+      transition: background-color 0.15s ease;
+    }
+
+    details.tool-detail summary::-webkit-details-marker { display: none; }
+
+    details.tool-detail summary:hover {
+      background-color: var(--bg-alt);
+    }
+
+    .detail-summary-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .detail-tool-name {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .detail-tool-type {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      padding: 0.2rem 0.55rem;
+      background: var(--bg-alt);
+      border-radius: 3px;
+    }
+
+    details.tool-detail[open] summary .detail-tool-type {
+      background: rgba(140, 21, 21, 0.08);
+      color: var(--cardinal);
+    }
+
+    .detail-toggle {
+      font-size: 1.2rem;
+      color: var(--ink-faint);
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    details.tool-detail[open] .detail-toggle {
+      transform: rotate(45deg);
+    }
+
+    .detail-body {
+      padding: 0 1.5rem 1.5rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1.25rem;
+      animation: detailOpen 0.3s ease;
+    }
+
+    @keyframes detailOpen {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .detail-body h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--cardinal);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    .detail-body h4:first-child { margin-top: 0; }
+
+    .detail-body p {
+      font-size: 0.98rem;
+      color: var(--ink-soft);
+      margin-bottom: 0.75rem;
+    }
+
+    .detail-body ul, .detail-body ol {
+      margin: 0 0 0.75rem 1.25rem;
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+    }
+
+    .detail-body li {
+      margin-bottom: 0.4rem;
+    }
+
+    .detail-body code {
+      background: var(--bg-alt);
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+      font-size: 0.85rem;
+      color: var(--ink);
+    }
+
+    .detail-body pre {
+      background: var(--ink);
+      color: #E8E8E2;
+      padding: 1.25rem;
+      border-radius: var(--radius);
+      overflow-x: auto;
+      font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+      font-size: 0.82rem;
+      line-height: 1.55;
+      margin: 0.75rem 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .detail-body pre code {
+      background: transparent;
+      padding: 0;
+      color: inherit;
+      font-size: inherit;
+    }
+
+    .detail-impact {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--cardinal);
+      padding: 0.4rem 0.75rem;
+      background: rgba(140, 21, 21, 0.06);
+      border-radius: 4px;
+      margin: 0.5rem 0;
+    }
+
     /* PUBLICATIONS */
     .pubs-list {
       list-style: none;
@@ -717,60 +883,60 @@
       <div class="container">
         <div class="section-eyebrow">Toolkit</div>
         <h2>Five workflows for AI in medical education.</h2>
-        <p class="research-lede">These are the tools I use to study medicine at Stanford. Three are custom Claude skills I built. Two are workflows around tools you probably already have. All free to use, modify, and share. Click any tool for step-by-step instructions.</p>
+        <p class="research-lede">These are the tools I use to study medicine at Stanford. Three are custom Claude skills I built. Two are workflows around tools you probably already have. All free to use, modify, and share. Click any tool below for step-by-step instructions.</p>
 
         <div class="toolkit-grid">
 
-          <!-- TOOL 1: Lecture Distiller -->
+          <!-- TOOL 1: lecture-to-study-guide -->
           <article class="tool-card">
             <div class="tool-header">
-              <div class="tool-name">Lecture Distiller</div>
+              <div class="tool-name">lecture-to-study-guide</div>
               <span class="tool-type">Claude Skill</span>
             </div>
-            <p class="tool-desc">Turn 120 disorganized slides into 4 cleanly organized sections: pathophysiology, clinical presentation, differential diagnosis, clinical correlations. <strong>3 hours → 5 minutes per lecture.</strong></p>
+            <p class="tool-desc">Drop in a lecture PDF and learning objectives, get back a premium-formatted Word study guide (.docx) with MEMORIZE / EXAM TRAP callout boxes, comparison tables, and a Big Picture overview. <strong>3 hours → 5 minutes per lecture.</strong></p>
             <div class="tool-meta">
               <span class="tool-tag">Med Student</span>
               <span class="tool-tag">Preclinical</span>
-              <span class="tool-tag">Custom Skill</span>
+              <span class="tool-tag">.docx output</span>
             </div>
-            <a href="https://github.com/harrisonkonsker/harrisonkonsker.github.io/blob/main/toolkit/01-lecture-distiller.md" target="_blank" rel="noopener" class="tool-link">View instructions <span class="arrow">→</span></a>
+            <a href="#tool-lecture-to-study-guide" class="tool-link">View instructions <span class="arrow">↓</span></a>
           </article>
 
-          <!-- TOOL 2: Mnemonic Image Generator -->
+          <!-- TOOL 2: mnemonic-image -->
           <article class="tool-card">
             <div class="tool-header">
-              <div class="tool-name">Mnemonic Image Generator</div>
+              <div class="tool-name">mnemonic-image</div>
               <span class="tool-type">Claude + Gemini</span>
             </div>
-            <p class="tool-desc">Turn a hard-to-remember medical term into a single visual scene that encodes both the term's name and its meaning. <strong>140 mnemonics created this year.</strong> Built for terms that refuse to stick.</p>
+            <p class="tool-desc">Generate vivid AI image prompts that encode both a medical term's NAME and its MEANING into one memorable scene. Pair with Gemini for image rendering. <strong>140 mnemonics created this year.</strong></p>
             <div class="tool-meta">
               <span class="tool-tag">Med Student</span>
               <span class="tool-tag">Memory</span>
-              <span class="tool-tag">Custom Skill</span>
+              <span class="tool-tag">Image output</span>
             </div>
-            <a href="https://github.com/harrisonkonsker/harrisonkonsker.github.io/blob/main/toolkit/02-mnemonic-image-generator.md" target="_blank" rel="noopener" class="tool-link">View instructions <span class="arrow">→</span></a>
+            <a href="#tool-mnemonic-image" class="tool-link">View instructions <span class="arrow">↓</span></a>
           </article>
 
-          <!-- TOOL 3: Anki Card Auto-Maker -->
+          <!-- TOOL 3: anki-flashcard-creator -->
           <article class="tool-card">
             <div class="tool-header">
-              <div class="tool-name">Anki Card Auto-Maker</div>
+              <div class="tool-name">anki-flashcard-creator</div>
               <span class="tool-type">Claude Skill</span>
             </div>
-            <p class="tool-desc">Upload a lecture slide, get back finished Anki cards in perfect format. The bottleneck of making cards is gone. <strong>12 hours → 10 minutes per lecture.</strong></p>
+            <p class="tool-desc">Upload a lecture PDF, get back an interactive HTML study guide PLUS a ready-to-import .apkg Anki deck. L2-first Stanford Med workflow. <strong>12 hours → 10 minutes per lecture.</strong></p>
             <div class="tool-meta">
               <span class="tool-tag">Med Student</span>
               <span class="tool-tag">Spaced Repetition</span>
-              <span class="tool-tag">Custom Skill</span>
+              <span class="tool-tag">.apkg output</span>
             </div>
-            <a href="https://github.com/harrisonkonsker/harrisonkonsker.github.io/blob/main/toolkit/03-anki-card-maker.md" target="_blank" rel="noopener" class="tool-link">View instructions <span class="arrow">→</span></a>
+            <a href="#tool-anki-flashcard-creator" class="tool-link">View instructions <span class="arrow">↓</span></a>
           </article>
 
           <!-- TOOL 4: NotebookLM Podcast -->
           <article class="tool-card">
             <div class="tool-header">
               <div class="tool-name">Lecture-as-Podcast</div>
-              <span class="tool-type">NotebookLM Workflow</span>
+              <span class="tool-type">NotebookLM</span>
             </div>
             <p class="tool-desc">Turn any lecture into a 15-minute conversational podcast you can listen to on your commute or workout. Interactive mode lets you interrupt the hosts with questions in real time.</p>
             <div class="tool-meta">
@@ -778,14 +944,14 @@
               <span class="tool-tag">Audio Learning</span>
               <span class="tool-tag">Free Tool</span>
             </div>
-            <a href="https://github.com/harrisonkonsker/harrisonkonsker.github.io/blob/main/toolkit/04-notebooklm-podcast.md" target="_blank" rel="noopener" class="tool-link">View instructions <span class="arrow">→</span></a>
+            <a href="#tool-notebooklm" class="tool-link">View instructions <span class="arrow">↓</span></a>
           </article>
 
           <!-- TOOL 5: Diagram Generator -->
           <article class="tool-card">
             <div class="tool-header">
               <div class="tool-name">Lecture-to-Diagram</div>
-              <span class="tool-type">ChatGPT Workflow</span>
+              <span class="tool-type">ChatGPT</span>
             </div>
             <p class="tool-desc">When the lecture doesn't click, generate a visual diagram organized by the most important categories of the content. AI didn't change what's true. It changed how my brain perceives it.</p>
             <div class="tool-meta">
@@ -793,8 +959,298 @@
               <span class="tool-tag">Mechanism-heavy</span>
               <span class="tool-tag">Free Tool</span>
             </div>
-            <a href="https://github.com/harrisonkonsker/harrisonkonsker.github.io/blob/main/toolkit/05-diagram-generator.md" target="_blank" rel="noopener" class="tool-link">View instructions <span class="arrow">→</span></a>
+            <a href="#tool-diagram" class="tool-link">View instructions <span class="arrow">↓</span></a>
           </article>
+
+        </div>
+
+        <!-- INSTRUCTIONS ACCORDION -->
+        <div class="instructions-block">
+          <h3 class="instructions-title">How to use each tool</h3>
+
+          <!-- INSTRUCTION 1: lecture-to-study-guide -->
+          <details class="tool-detail" id="tool-lecture-to-study-guide">
+            <summary>
+              <span class="detail-summary-left">
+                <span class="detail-tool-name">lecture-to-study-guide</span>
+                <span class="detail-tool-type">Claude Skill</span>
+              </span>
+              <span class="detail-toggle">+</span>
+            </summary>
+            <div class="detail-body">
+              <h4>What it does</h4>
+              <p>Takes a medical lecture (PDF + learning objectives) and outputs a polished, premium-formatted Word study guide (.docx) with Calibri/Arial typography, cardinal-red accents, MEMORIZE / EXAM TRAP callout boxes, comparison tables, and a "Big Picture" overview section. Anti-hallucination by design: every fact comes from your slides or stated learning objectives, never from external board prep.</p>
+              <div class="detail-impact">Time saved: ~3 hours → ~5 minutes per lecture</div>
+
+              <h4>What you need</h4>
+              <ul>
+                <li>Claude account (Claude.ai works; Claude Code is best)</li>
+                <li>Your lecture in PDF format</li>
+                <li>Your learning objectives (LOs) as text or PDF</li>
+              </ul>
+
+              <h4>How to use</h4>
+              <ol>
+                <li>Open a new Claude conversation</li>
+                <li>Attach your lecture PDF + LOs</li>
+                <li>Say: <code>Use the lecture-to-study-guide skill on this lecture.</code></li>
+                <li>Wait ~5 minutes. Claude returns a .docx file you can download.</li>
+              </ol>
+
+              <h4>If you don't have the skill installed (starter prompt)</h4>
+              <pre><code>You are a medical school study guide builder.
+
+Take the attached lecture PDF and learning objectives. Generate a comprehensive Word-style study guide with these elements:
+
+1. BIG PICTURE — 2-3 sentence overview at the top
+2. Section-by-section content organized by learning objective
+3. MEMORIZE callout boxes around high-yield facts
+4. EXAM TRAP callout boxes around easy-to-confuse concepts
+5. Comparison tables for differential diagnoses or drug classes
+6. Bullet points, not paragraphs
+
+CRITICAL RULES:
+- Only use facts from the lecture and LOs. Do not add board knowledge.
+- Preserve the lecturer's exact terminology.
+- Flag anything the lecturer emphasized as "high-yield" or "memorize."
+
+Output as a well-structured document.</code></pre>
+
+              <h4>Tips</h4>
+              <ul>
+                <li>Works best on lectures 50–200 slides long</li>
+                <li>For .pptx files: export to PDF first</li>
+                <li>If your school provides learning objectives, always include them — the skill is L2-first (learning-objective-first)</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- INSTRUCTION 2: mnemonic-image -->
+          <details class="tool-detail" id="tool-mnemonic-image">
+            <summary>
+              <span class="detail-summary-left">
+                <span class="detail-tool-name">mnemonic-image</span>
+                <span class="detail-tool-type">Claude + Gemini</span>
+              </span>
+              <span class="detail-toggle">+</span>
+            </summary>
+            <div class="detail-body">
+              <h4>What it does</h4>
+              <p>You give it a medical term (drug, condition, anatomy, pathology, microbiology). It returns a vivid AI image prompt that encodes both the term's NAME (via syllable sound-alike hooks) and its MEANING / function (via scene composition). You then paste that prompt into Gemini to render the actual image.</p>
+              <p>This is how I made the Gordon-Ramsay-in-a-Hunt-outfit image for Ramsay Hunt syndrome.</p>
+              <div class="detail-impact">140 mnemonics generated this year</div>
+
+              <h4>What you need</h4>
+              <ul>
+                <li>Claude (Claude.ai or Claude Code) — generates the prompt</li>
+                <li>Gemini (Google AI Studio, free) — renders the image</li>
+                <li>Optional: Anki to attach the image to a flashcard</li>
+              </ul>
+
+              <h4>How to use</h4>
+              <ol>
+                <li>In Claude: say <code>Use the mnemonic-image skill on this term: [your term]</code></li>
+                <li>Claude returns a syllable breakdown + image prompt</li>
+                <li>Copy the image prompt</li>
+                <li>Go to <a href="https://aistudio.google.com" target="_blank" rel="noopener">Google AI Studio</a>, switch to Imagen / image generation mode</li>
+                <li>Paste the prompt, generate (~10 seconds)</li>
+                <li>Save the image to Anki or your notes</li>
+              </ol>
+
+              <h4>If you don't have the skill installed (starter prompt)</h4>
+              <pre><code>You are a medical mnemonic image prompt generator.
+
+Given a medical term, output a single vivid AI image prompt that encodes BOTH:
+1. The NAME of the term (use sound-alike visual hooks broken into syllables)
+2. The MEANING or function (encoded into the scene)
+
+Output format:
+TERM: [the term]
+NAME BREAKDOWN: [syllable-by-syllable sound-alikes]
+MEANING ENCODING: [aspects of meaning shown in the scene]
+IMAGE PROMPT: [a single descriptive paragraph for an AI image generator]
+
+Make it specific, surprising, slightly absurd — memory loves ridiculous.
+
+Medical term: [PASTE YOUR TERM HERE]</code></pre>
+
+              <h4>Why two AI tools</h4>
+              <ul>
+                <li><strong>Claude</strong> is better at the linguistic puzzle (breaking syllables, encoding meaning)</li>
+                <li><strong>Gemini's Imagen</strong> produces sharper, more detailed images</li>
+              </ul>
+
+              <h4>Example: Ramsay Hunt Syndrome</h4>
+              <p>The output prompt: Gordon Ramsay in a brown hunting outfit, holding cranial nerve VII like a fishing rod, standing in a forest filled with chickenpox-virus pumpkins. His ear has painful red vesicles. A clock reads "72 hours."</p>
+              <p>One scene encodes: Ramsay (Gordon Ramsay), Hunt (hunting outfit), CN VII (rod with VII), VZV (pumpkins), painful ear vesicles, 72-hour treatment window.</p>
+            </div>
+          </details>
+
+          <!-- INSTRUCTION 3: anki-flashcard-creator -->
+          <details class="tool-detail" id="tool-anki-flashcard-creator">
+            <summary>
+              <span class="detail-summary-left">
+                <span class="detail-tool-name">anki-flashcard-creator</span>
+                <span class="detail-tool-type">Claude Skill</span>
+              </span>
+              <span class="detail-toggle">+</span>
+            </summary>
+            <div class="detail-body">
+              <h4>What it does</h4>
+              <p>Upload a medical lecture PDF and get back two things: (1) an interactive HTML study guide for first-pass learning, and (2) a ready-to-import .apkg Anki deck for spaced repetition. The skill uses the L2-first (learning-objective-first) Stanford Med workflow: it derives the study guide first, then generates Anki cards directly from that guide so cards stay aligned with what was actually taught.</p>
+              <div class="detail-impact">Time saved: ~12 hours → ~10 minutes per lecture</div>
+
+              <h4>What you need</h4>
+              <ul>
+                <li>Claude (Claude.ai or Claude Code)</li>
+                <li>Anki installed (<a href="https://apps.ankiweb.net" target="_blank" rel="noopener">free at apps.ankiweb.net</a>)</li>
+                <li>Your lecture PDF</li>
+              </ul>
+
+              <h4>How to use</h4>
+              <ol>
+                <li>Open a new Claude conversation</li>
+                <li>Attach your lecture PDF</li>
+                <li>Say: <code>Use the anki-flashcard-creator skill on this lecture.</code></li>
+                <li>Claude generates an HTML study guide first, then derives Anki cards from it</li>
+                <li>Download the .apkg file</li>
+                <li>In Anki: File → Import → select the .apkg → all cards import as a new deck</li>
+              </ol>
+
+              <h4>Bonus features</h4>
+              <ul>
+                <li><strong>Cross-reference against boards:</strong> upload a board-prep card list and the skill will flag duplicates so you don't double-study</li>
+                <li><strong>Rebuild an existing deck:</strong> point it at an old deck + your lecture, and it cleans up the deck against the lecture content</li>
+                <li><strong>Week 1 Leech Review:</strong> upload your Anki leech cards (the ones you keep forgetting) and the skill helps you understand why they're hard to retain</li>
+              </ul>
+
+              <h4>If you don't have the skill installed (starter prompt)</h4>
+              <pre><code>You are an Anki flashcard generator for medical students.
+
+For the attached lecture, generate Anki cards following these rules:
+
+CARD RULES:
+- One concept per card
+- Question on the front, direct answer on the back
+- Use cloze deletions for lists, drug names, lab values
+- Skip background context that isn't testable
+- One concept per card (no compound questions)
+
+OUTPUT FORMAT:
+Q: [question]
+A: [answer]
+---
+
+Output one card per concept. No preamble. Use the format above so I can bulk-import to Anki via tab-separated text.</code></pre>
+            </div>
+          </details>
+
+          <!-- INSTRUCTION 4: NotebookLM -->
+          <details class="tool-detail" id="tool-notebooklm">
+            <summary>
+              <span class="detail-summary-left">
+                <span class="detail-tool-name">Lecture-as-Podcast</span>
+                <span class="detail-tool-type">NotebookLM</span>
+              </span>
+              <span class="detail-toggle">+</span>
+            </summary>
+            <div class="detail-body">
+              <h4>What it does</h4>
+              <p>Turns any lecture into a 10–20 minute audio overview where two AI hosts discuss the content conversationally. Built around Google's free <a href="https://notebooklm.google.com" target="_blank" rel="noopener">NotebookLM</a>. The killer feature is interactive mode: you can interrupt the hosts mid-conversation with a question and they'll pause, answer, and continue.</p>
+
+              <h4>What you need</h4>
+              <ul>
+                <li>Free Google account</li>
+                <li>Lecture PDF or any source material (slides, articles, notes)</li>
+              </ul>
+
+              <h4>How to use</h4>
+              <ol>
+                <li>Go to <a href="https://notebooklm.google.com" target="_blank" rel="noopener">notebooklm.google.com</a></li>
+                <li>Click "Create New Notebook"</li>
+                <li>Upload your lecture file (PDF, .pptx, .txt all work)</li>
+                <li>Click "Audio Overview" in the right sidebar</li>
+                <li>Wait ~2–5 minutes</li>
+                <li>Listen in the browser or download as MP3 for your phone</li>
+              </ol>
+
+              <h4>Interactive mode (the killer feature)</h4>
+              <p>Once the podcast is playing:</p>
+              <ul>
+                <li>Click "Interactive mode (beta)"</li>
+                <li>When confused, tap the microphone</li>
+                <li>Ask: <em>"Wait, can you explain why beta-blockers are contraindicated here?"</em></li>
+                <li>The hosts pause, answer, and continue</li>
+              </ul>
+              <p>This moves you from passive listening to active questioning at the exact moment confusion hits.</p>
+
+              <h4>When to use it</h4>
+              <ul>
+                <li>Pre-lecture priming on the way to class</li>
+                <li>Drive time / commute</li>
+                <li>Workouts</li>
+                <li>Walks instead of caffeine for an afternoon slump</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- INSTRUCTION 5: Diagram Generator -->
+          <details class="tool-detail" id="tool-diagram">
+            <summary>
+              <span class="detail-summary-left">
+                <span class="detail-tool-name">Lecture-to-Diagram</span>
+                <span class="detail-tool-type">ChatGPT</span>
+              </span>
+              <span class="detail-toggle">+</span>
+            </summary>
+            <div class="detail-body">
+              <h4>What it does</h4>
+              <p>Takes dense lecture content and generates a visual diagram that maps the concepts spatially. Useful when the lecture has too many moving parts to hold in your head, or when prose isn't sticking.</p>
+
+              <h4>What you need</h4>
+              <ul>
+                <li>ChatGPT account (Plus tier recommended for reliable image generation)</li>
+                <li>Lecture PDF, slide image, or pasted text</li>
+              </ul>
+
+              <h4>How to use</h4>
+              <ol>
+                <li>Open ChatGPT</li>
+                <li>Upload your lecture PDF or paste the relevant text</li>
+                <li>Use this starter prompt (below)</li>
+                <li>Refine: ask for simpler layouts, more colors, different orientations</li>
+                <li>Save the image to your notes or Anki</li>
+              </ol>
+
+              <h4>Starter prompt</h4>
+              <pre><code>I'm studying for medical school and the attached lecture covers [TOPIC].
+I need a diagram that helps me visualize this.
+
+Please generate an image that:
+1. Identifies the 3–5 most important categories in the lecture
+2. Shows the relationships between them spatially (arrows, hierarchies, branches)
+3. Uses color-coding so each category is distinct
+4. Includes the key terms inside each category
+5. Avoids being too dense — readability matters more than completeness
+
+Output: a single clear diagram, not a wall of text. Use a clean medical textbook style.</code></pre>
+
+              <h4>When it shines</h4>
+              <ul>
+                <li>Mechanism-heavy topics (biochem cascades, immune responses, drug pathways)</li>
+                <li>Differential diagnosis trees</li>
+                <li>Anatomy with relationships</li>
+                <li>Treatment algorithms (first-line, second-line, contraindications)</li>
+              </ul>
+
+              <h4>Tips</h4>
+              <ul>
+                <li>Be specific about layout: "flowchart," "hub-and-spoke," "Venn diagram," "decision tree" all produce different outputs</li>
+                <li>Don't try to fit everything — diagrams fail when overloaded</li>
+                <li>Generate 2–3 variants, pick the clearest</li>
+              </ul>
+            </div>
+          </details>
 
         </div>
 
@@ -803,7 +1259,6 @@
             <strong>The bigger idea</strong>
             <span>Using AI as a search engine gives you an answer. Using AI as a workflow gives you a personalized and more efficient way to learn. The next investment in AI medical education should be better workflows — built by the school, with students, for every student.</span>
           </div>
-          <a href="https://github.com/harrisonkonsker/harrisonkonsker.github.io/tree/main/toolkit" target="_blank" rel="noopener" class="btn btn-primary">Browse all on GitHub <span class="arrow">→</span></a>
         </div>
       </div>
     </section>
@@ -1009,6 +1464,26 @@
   <script>
     // Auto-update year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Auto-open the matching <details> when a toolkit card link is clicked
+    document.querySelectorAll('.tool-card .tool-link[href^="#tool-"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const id = link.getAttribute('href').slice(1);
+        const target = document.getElementById(id);
+        if (target && target.tagName === 'DETAILS') {
+          target.open = true;
+        }
+      });
+    });
+
+    // If page loads with a #tool-* hash, open that details and scroll to it
+    if (window.location.hash && window.location.hash.startsWith('#tool-')) {
+      const target = document.getElementById(window.location.hash.slice(1));
+      if (target && target.tagName === 'DETAILS') {
+        target.open = true;
+        setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+      }
+    }
   </script>
 
 </body>
