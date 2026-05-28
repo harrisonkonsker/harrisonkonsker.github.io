@@ -605,6 +605,95 @@
       margin: 0.5rem 0;
     }
 
+    /* DOWNLOAD CALLOUT */
+    .download-box {
+      background: var(--ink);
+      color: var(--bg);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .download-box-text {
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .download-box-text strong {
+      display: block;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--bg);
+    }
+
+    .download-box-text span {
+      font-size: 0.9rem;
+      color: rgba(250, 250, 247, 0.7);
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.25rem;
+      background: var(--bg);
+      color: var(--ink) !important;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .download-btn:hover {
+      background: var(--cardinal);
+      color: var(--bg) !important;
+    }
+
+    .skill-meta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--ink-faint);
+      margin: -0.5rem 0 1rem;
+      flex-wrap: wrap;
+    }
+
+    .skill-meta code {
+      background: var(--bg-alt);
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+    }
+
+    .beginner-note {
+      background: rgba(140, 21, 21, 0.04);
+      border-left: 3px solid var(--cardinal);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+    }
+
+    .beginner-note strong {
+      color: var(--cardinal);
+      font-weight: 600;
+    }
+
     /* PUBLICATIONS */
     .pubs-list {
       list-style: none;
@@ -864,7 +953,7 @@
           </article>
 
           <article class="research-card">
-            <span class="research-tag">Emergency Medicine</span>
+            <span class="research-tag">OBGYN</span>
             <h3 style="margin-top: 1rem;">Predicting Missed Ovarian Torsion</h3>
             <p>Ovarian torsion is one of the most commonly missed ED diagnoses, and a miss often costs the patient her ovary. We are leveraging Stanford's full hospital dataset to build a predictive tool that flags at-risk presentations in real time.</p>
           </article>
@@ -883,53 +972,53 @@
       <div class="container">
         <div class="section-eyebrow">Toolkit</div>
         <h2>Five workflows for AI in medical education.</h2>
-        <p class="research-lede">These are the tools I use to study medicine at Stanford. Three are custom Claude skills I built. Two are workflows around tools you probably already have. All free to use, modify, and share. Click any tool below for step-by-step instructions.</p>
+        <p class="research-lede">These are the tools I use to study medicine at Stanford. Three are custom Claude skills I built — each can be downloaded and used in your own Claude account. Two are workflows around tools you probably already have. All free to use, modify, and share. <strong>Never used AI for studying? This page is built for you.</strong> Click any tool below for step-by-step instructions.</p>
 
         <div class="toolkit-grid">
 
-          <!-- TOOL 1: lecture-to-study-guide -->
+          <!-- TOOL 1: Lecture to Study Guide -->
           <article class="tool-card">
             <div class="tool-header">
-              <div class="tool-name">lecture-to-study-guide</div>
+              <div class="tool-name">Lecture to Study Guide</div>
               <span class="tool-type">Claude Skill</span>
             </div>
-            <p class="tool-desc">Drop in a lecture PDF and learning objectives, get back a premium-formatted Word study guide (.docx) with MEMORIZE / EXAM TRAP callout boxes, comparison tables, and a Big Picture overview. <strong>3 hours → 5 minutes per lecture.</strong></p>
+            <p class="tool-desc">Drop in a lecture PDF and your learning objectives, get back a premium-formatted Word study guide (.docx) with MEMORIZE and EXAM TRAP callout boxes, comparison tables, and a Big Picture overview. Saves hours of organizing.</p>
             <div class="tool-meta">
               <span class="tool-tag">Med Student</span>
               <span class="tool-tag">Preclinical</span>
               <span class="tool-tag">.docx output</span>
             </div>
-            <a href="#tool-lecture-to-study-guide" class="tool-link">View instructions <span class="arrow">↓</span></a>
+            <a href="#tool-lecture-to-study-guide" class="tool-link">View instructions & download <span class="arrow">↓</span></a>
           </article>
 
-          <!-- TOOL 2: mnemonic-image -->
+          <!-- TOOL 2: Mnemonic Image Generator -->
           <article class="tool-card">
             <div class="tool-header">
-              <div class="tool-name">mnemonic-image</div>
+              <div class="tool-name">Mnemonic Image Generator</div>
               <span class="tool-type">Claude + Gemini</span>
             </div>
-            <p class="tool-desc">Generate vivid AI image prompts that encode both a medical term's NAME and its MEANING into one memorable scene. Pair with Gemini for image rendering. <strong>140 mnemonics created this year.</strong></p>
+            <p class="tool-desc">Generate vivid AI image prompts that encode both a medical term's NAME and its MEANING into one memorable scene. Pair with Gemini to render the image. Built for terms that refuse to stick.</p>
             <div class="tool-meta">
               <span class="tool-tag">Med Student</span>
               <span class="tool-tag">Memory</span>
               <span class="tool-tag">Image output</span>
             </div>
-            <a href="#tool-mnemonic-image" class="tool-link">View instructions <span class="arrow">↓</span></a>
+            <a href="#tool-mnemonic-image" class="tool-link">View instructions & download <span class="arrow">↓</span></a>
           </article>
 
-          <!-- TOOL 3: anki-flashcard-creator -->
+          <!-- TOOL 3: Anki Flashcard Creator -->
           <article class="tool-card">
             <div class="tool-header">
-              <div class="tool-name">anki-flashcard-creator</div>
+              <div class="tool-name">Anki Flashcard Creator</div>
               <span class="tool-type">Claude Skill</span>
             </div>
-            <p class="tool-desc">Upload a lecture PDF, get back an interactive HTML study guide PLUS a ready-to-import .apkg Anki deck. L2-first Stanford Med workflow. <strong>12 hours → 10 minutes per lecture.</strong></p>
+            <p class="tool-desc">Upload a lecture PDF, get back an interactive HTML study guide PLUS a ready-to-import .apkg Anki deck. L2-first (learning-objective-first) Stanford Med workflow. The bottleneck of making cards is gone.</p>
             <div class="tool-meta">
               <span class="tool-tag">Med Student</span>
               <span class="tool-tag">Spaced Repetition</span>
               <span class="tool-tag">.apkg output</span>
             </div>
-            <a href="#tool-anki-flashcard-creator" class="tool-link">View instructions <span class="arrow">↓</span></a>
+            <a href="#tool-anki-flashcard-creator" class="tool-link">View instructions & download <span class="arrow">↓</span></a>
           </article>
 
           <!-- TOOL 4: NotebookLM Podcast -->
@@ -968,180 +1057,183 @@
         <div class="instructions-block">
           <h3 class="instructions-title">How to use each tool</h3>
 
-          <!-- INSTRUCTION 1: lecture-to-study-guide -->
+          <!-- INSTRUCTION 1: Lecture to Study Guide -->
           <details class="tool-detail" id="tool-lecture-to-study-guide">
             <summary>
               <span class="detail-summary-left">
-                <span class="detail-tool-name">lecture-to-study-guide</span>
+                <span class="detail-tool-name">Lecture to Study Guide</span>
                 <span class="detail-tool-type">Claude Skill</span>
               </span>
               <span class="detail-toggle">+</span>
             </summary>
             <div class="detail-body">
+              <div class="skill-meta">
+                <span>Skill folder: <code>lecture-to-study-guide</code></span>
+              </div>
+
               <h4>What it does</h4>
-              <p>Takes a medical lecture (PDF + learning objectives) and outputs a polished, premium-formatted Word study guide (.docx) with Calibri/Arial typography, cardinal-red accents, MEMORIZE / EXAM TRAP callout boxes, comparison tables, and a "Big Picture" overview section. Anti-hallucination by design: every fact comes from your slides or stated learning objectives, never from external board prep.</p>
-              <div class="detail-impact">Time saved: ~3 hours → ~5 minutes per lecture</div>
+              <p>Takes a medical lecture (PDF + learning objectives) and outputs a polished, premium-formatted Word study guide (.docx) with Calibri/Arial typography, cardinal-red accents, MEMORIZE and EXAM TRAP callout boxes, comparison tables, and a "Big Picture" overview section. Anti-hallucination by design: every fact comes from your slides or stated learning objectives, never from external board prep.</p>
+
+              <div class="download-box">
+                <div class="download-box-text">
+                  <strong>Download the skill</strong>
+                  <span>Includes SKILL.md, scripts, example output, and format spec. Unzip into your Claude skills folder, or attach the SKILL.md directly in any Claude conversation.</span>
+                </div>
+                <a href="downloads/lecture-to-study-guide.zip" download class="download-btn">Download .zip ↓</a>
+              </div>
+
+              <div class="beginner-note">
+                <strong>Never used a Claude skill before?</strong> Read the instructions below — the "Easiest path" works for anyone, even with no technical background.
+              </div>
 
               <h4>What you need</h4>
               <ul>
-                <li>Claude account (Claude.ai works; Claude Code is best)</li>
-                <li>Your lecture in PDF format</li>
-                <li>Your learning objectives (LOs) as text or PDF</li>
+                <li>A free Claude account at <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a></li>
+                <li>Your lecture in PDF format (export from PowerPoint if needed)</li>
+                <li>Your learning objectives — a list of what your school says you should know after the lecture</li>
               </ul>
 
-              <h4>How to use</h4>
+              <h4>How to use — Easiest path (no setup)</h4>
               <ol>
-                <li>Open a new Claude conversation</li>
-                <li>Attach your lecture PDF + LOs</li>
-                <li>Say: <code>Use the lecture-to-study-guide skill on this lecture.</code></li>
-                <li>Wait ~5 minutes. Claude returns a .docx file you can download.</li>
+                <li>Click the download button above. You'll get a .zip file.</li>
+                <li>Unzip it. You'll see a file called <code>SKILL.md</code> inside the folder.</li>
+                <li>Go to <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> and start a new chat.</li>
+                <li>Drag <code>SKILL.md</code> into the chat, drag your lecture PDF in too, and your learning objectives.</li>
+                <li>Type: <em>"Please read the entire SKILL.md and follow its instructions to build me a study guide from this lecture."</em></li>
+                <li>Wait ~5 minutes. Claude returns a downloadable .docx file.</li>
               </ol>
 
-              <h4>If you don't have the skill installed (starter prompt)</h4>
-              <pre><code>You are a medical school study guide builder.
-
-Take the attached lecture PDF and learning objectives. Generate a comprehensive Word-style study guide with these elements:
-
-1. BIG PICTURE — 2-3 sentence overview at the top
-2. Section-by-section content organized by learning objective
-3. MEMORIZE callout boxes around high-yield facts
-4. EXAM TRAP callout boxes around easy-to-confuse concepts
-5. Comparison tables for differential diagnoses or drug classes
-6. Bullet points, not paragraphs
-
-CRITICAL RULES:
-- Only use facts from the lecture and LOs. Do not add board knowledge.
-- Preserve the lecturer's exact terminology.
-- Flag anything the lecturer emphasized as "high-yield" or "memorize."
-
-Output as a well-structured document.</code></pre>
+              <h4>How to use — Power path (Claude Code)</h4>
+              <ol>
+                <li>Unzip the download into <code>~/.claude/skills/</code> on your computer</li>
+                <li>Restart Claude Code</li>
+                <li>In any conversation, say: <code>Use the lecture-to-study-guide skill on this lecture.</code> (with files attached)</li>
+              </ol>
 
               <h4>Tips</h4>
               <ul>
                 <li>Works best on lectures 50–200 slides long</li>
                 <li>For .pptx files: export to PDF first</li>
-                <li>If your school provides learning objectives, always include them — the skill is L2-first (learning-objective-first)</li>
+                <li>Always include learning objectives — the skill is L2-first (learning-objective-first) and uses them as the spine of the study guide</li>
               </ul>
             </div>
           </details>
 
-          <!-- INSTRUCTION 2: mnemonic-image -->
+          <!-- INSTRUCTION 2: Mnemonic Image Generator -->
           <details class="tool-detail" id="tool-mnemonic-image">
             <summary>
               <span class="detail-summary-left">
-                <span class="detail-tool-name">mnemonic-image</span>
+                <span class="detail-tool-name">Mnemonic Image Generator</span>
                 <span class="detail-tool-type">Claude + Gemini</span>
               </span>
               <span class="detail-toggle">+</span>
             </summary>
             <div class="detail-body">
+              <div class="skill-meta">
+                <span>Skill folder: <code>mnemonic-image</code></span>
+              </div>
+
               <h4>What it does</h4>
-              <p>You give it a medical term (drug, condition, anatomy, pathology, microbiology). It returns a vivid AI image prompt that encodes both the term's NAME (via syllable sound-alike hooks) and its MEANING / function (via scene composition). You then paste that prompt into Gemini to render the actual image.</p>
-              <p>This is how I made the Gordon-Ramsay-in-a-Hunt-outfit image for Ramsay Hunt syndrome.</p>
-              <div class="detail-impact">140 mnemonics generated this year</div>
+              <p>You give it a medical term (a drug, condition, anatomy term, pathology, microbiology). It returns a vivid AI image prompt that encodes both the term's NAME (via syllable sound-alike hooks) and its MEANING (via scene composition). You then paste that prompt into Gemini to render the actual image. This is how I made the Gordon-Ramsay-in-a-Hunt-outfit image for Ramsay Hunt syndrome.</p>
+
+              <div class="download-box">
+                <div class="download-box-text">
+                  <strong>Download the skill</strong>
+                  <span>Includes the SKILL.md file. Unzip and drop into Claude — works the same way as the other skills.</span>
+                </div>
+                <a href="downloads/mnemonic-image.zip" download class="download-btn">Download .zip ↓</a>
+              </div>
+
+              <div class="beginner-note">
+                <strong>Never used AI for memory tricks before?</strong> This is the easiest skill to start with. One sentence in, one image out, ready to paste into your Anki cards.
+              </div>
 
               <h4>What you need</h4>
               <ul>
-                <li>Claude (Claude.ai or Claude Code) — generates the prompt</li>
-                <li>Gemini (Google AI Studio, free) — renders the image</li>
+                <li>A free Claude account at <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> (generates the prompt)</li>
+                <li>A free Google AI Studio account at <a href="https://aistudio.google.com" target="_blank" rel="noopener">aistudio.google.com</a> (renders the image)</li>
                 <li>Optional: Anki to attach the image to a flashcard</li>
               </ul>
 
-              <h4>How to use</h4>
+              <h4>How to use — Easiest path</h4>
               <ol>
-                <li>In Claude: say <code>Use the mnemonic-image skill on this term: [your term]</code></li>
-                <li>Claude returns a syllable breakdown + image prompt</li>
-                <li>Copy the image prompt</li>
-                <li>Go to <a href="https://aistudio.google.com" target="_blank" rel="noopener">Google AI Studio</a>, switch to Imagen / image generation mode</li>
-                <li>Paste the prompt, generate (~10 seconds)</li>
-                <li>Save the image to Anki or your notes</li>
+                <li>Click the download button above. You'll get a .zip file.</li>
+                <li>Unzip it. You'll see a file called <code>SKILL.md</code>.</li>
+                <li>Go to <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> and start a new chat.</li>
+                <li>Drag <code>SKILL.md</code> into the chat.</li>
+                <li>Type: <em>"Please read the entire SKILL.md and generate a mnemonic image prompt for the term: [YOUR MEDICAL TERM]."</em></li>
+                <li>Claude returns a syllable breakdown plus a detailed image prompt.</li>
+                <li>Copy the image prompt.</li>
+                <li>Go to <a href="https://aistudio.google.com" target="_blank" rel="noopener">Google AI Studio</a>, switch to Imagen / image generation.</li>
+                <li>Paste the prompt and generate. Save the image.</li>
               </ol>
 
-              <h4>If you don't have the skill installed (starter prompt)</h4>
-              <pre><code>You are a medical mnemonic image prompt generator.
-
-Given a medical term, output a single vivid AI image prompt that encodes BOTH:
-1. The NAME of the term (use sound-alike visual hooks broken into syllables)
-2. The MEANING or function (encoded into the scene)
-
-Output format:
-TERM: [the term]
-NAME BREAKDOWN: [syllable-by-syllable sound-alikes]
-MEANING ENCODING: [aspects of meaning shown in the scene]
-IMAGE PROMPT: [a single descriptive paragraph for an AI image generator]
-
-Make it specific, surprising, slightly absurd — memory loves ridiculous.
-
-Medical term: [PASTE YOUR TERM HERE]</code></pre>
-
-              <h4>Why two AI tools</h4>
+              <h4>Why two AI tools?</h4>
               <ul>
                 <li><strong>Claude</strong> is better at the linguistic puzzle (breaking syllables, encoding meaning)</li>
-                <li><strong>Gemini's Imagen</strong> produces sharper, more detailed images</li>
+                <li><strong>Gemini's Imagen</strong> produces sharper, more detailed medical illustrations</li>
               </ul>
 
               <h4>Example: Ramsay Hunt Syndrome</h4>
-              <p>The output prompt: Gordon Ramsay in a brown hunting outfit, holding cranial nerve VII like a fishing rod, standing in a forest filled with chickenpox-virus pumpkins. His ear has painful red vesicles. A clock reads "72 hours."</p>
-              <p>One scene encodes: Ramsay (Gordon Ramsay), Hunt (hunting outfit), CN VII (rod with VII), VZV (pumpkins), painful ear vesicles, 72-hour treatment window.</p>
+              <p>The output prompt: <em>Gordon Ramsay in a brown hunting outfit, holding cranial nerve VII like a fishing rod, standing in a forest filled with chickenpox-virus pumpkins. His ear has painful red vesicles. A clock reads "72 hours."</em></p>
+              <p>One scene encodes: Ramsay (Gordon Ramsay), Hunt (hunting outfit), CN VII (rod with VII), VZV / chickenpox (pumpkins), painful ear vesicles, 72-hour treatment window.</p>
             </div>
           </details>
 
-          <!-- INSTRUCTION 3: anki-flashcard-creator -->
+          <!-- INSTRUCTION 3: Anki Flashcard Creator -->
           <details class="tool-detail" id="tool-anki-flashcard-creator">
             <summary>
               <span class="detail-summary-left">
-                <span class="detail-tool-name">anki-flashcard-creator</span>
+                <span class="detail-tool-name">Anki Flashcard Creator</span>
                 <span class="detail-tool-type">Claude Skill</span>
               </span>
               <span class="detail-toggle">+</span>
             </summary>
             <div class="detail-body">
+              <div class="skill-meta">
+                <span>Skill folder: <code>anki-flashcard-creator</code></span>
+              </div>
+
               <h4>What it does</h4>
-              <p>Upload a medical lecture PDF and get back two things: (1) an interactive HTML study guide for first-pass learning, and (2) a ready-to-import .apkg Anki deck for spaced repetition. The skill uses the L2-first (learning-objective-first) Stanford Med workflow: it derives the study guide first, then generates Anki cards directly from that guide so cards stay aligned with what was actually taught.</p>
-              <div class="detail-impact">Time saved: ~12 hours → ~10 minutes per lecture</div>
+              <p>Upload a medical lecture PDF and get back two things: (1) an interactive HTML study guide for first-pass learning, and (2) a ready-to-import .apkg Anki deck for spaced repetition. The skill uses the L2-first (learning-objective-first) Stanford Med workflow: it derives the study guide first, then generates Anki cards directly from that guide so the cards stay aligned with what was actually taught.</p>
+
+              <div class="download-box">
+                <div class="download-box-text">
+                  <strong>Download the skill</strong>
+                  <span>Includes the full SKILL.md (55KB of instructions). Unzip and drop into Claude — Claude will read the whole thing and follow the L2-first Stanford Med workflow.</span>
+                </div>
+                <a href="downloads/anki-flashcard-creator.zip" download class="download-btn">Download .zip ↓</a>
+              </div>
+
+              <div class="beginner-note">
+                <strong>Never used Anki before?</strong> Anki is a free flashcard app that uses spaced repetition — it shows you cards right before you would forget them. Download it at <a href="https://apps.ankiweb.net" target="_blank" rel="noopener">apps.ankiweb.net</a>. The .apkg file this skill creates imports directly into Anki as a new deck.
+              </div>
 
               <h4>What you need</h4>
               <ul>
-                <li>Claude (Claude.ai or Claude Code)</li>
-                <li>Anki installed (<a href="https://apps.ankiweb.net" target="_blank" rel="noopener">free at apps.ankiweb.net</a>)</li>
+                <li>A free Claude account at <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a></li>
+                <li>Anki installed (free at <a href="https://apps.ankiweb.net" target="_blank" rel="noopener">apps.ankiweb.net</a>)</li>
                 <li>Your lecture PDF</li>
               </ul>
 
-              <h4>How to use</h4>
+              <h4>How to use — Easiest path</h4>
               <ol>
-                <li>Open a new Claude conversation</li>
-                <li>Attach your lecture PDF</li>
-                <li>Say: <code>Use the anki-flashcard-creator skill on this lecture.</code></li>
-                <li>Claude generates an HTML study guide first, then derives Anki cards from it</li>
-                <li>Download the .apkg file</li>
-                <li>In Anki: File → Import → select the .apkg → all cards import as a new deck</li>
+                <li>Click the download button above. You'll get a .zip file.</li>
+                <li>Unzip it. You'll see a file called <code>SKILL.md</code>.</li>
+                <li>Go to <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> and start a new chat.</li>
+                <li>Drag <code>SKILL.md</code> into the chat. Drag your lecture PDF in too.</li>
+                <li>Type: <em>"Please read the entire SKILL.md and generate Anki flashcards from this lecture, following the L2-first workflow."</em></li>
+                <li>Wait. Claude generates an interactive HTML study guide first, then derives the Anki cards from it.</li>
+                <li>Download the .apkg file Claude provides.</li>
+                <li>In Anki: File → Import → select the .apkg → all cards import as a new deck.</li>
               </ol>
 
               <h4>Bonus features</h4>
               <ul>
                 <li><strong>Cross-reference against boards:</strong> upload a board-prep card list and the skill will flag duplicates so you don't double-study</li>
-                <li><strong>Rebuild an existing deck:</strong> point it at an old deck + your lecture, and it cleans up the deck against the lecture content</li>
+                <li><strong>Rebuild an existing deck:</strong> point it at an old deck plus your lecture, and it cleans up the deck against the lecture content</li>
                 <li><strong>Week 1 Leech Review:</strong> upload your Anki leech cards (the ones you keep forgetting) and the skill helps you understand why they're hard to retain</li>
               </ul>
-
-              <h4>If you don't have the skill installed (starter prompt)</h4>
-              <pre><code>You are an Anki flashcard generator for medical students.
-
-For the attached lecture, generate Anki cards following these rules:
-
-CARD RULES:
-- One concept per card
-- Question on the front, direct answer on the back
-- Use cloze deletions for lists, drug names, lab values
-- Skip background context that isn't testable
-- One concept per card (no compound questions)
-
-OUTPUT FORMAT:
-Q: [question]
-A: [answer]
----
-
-Output one card per concept. No preamble. Use the format above so I can bulk-import to Anki via tab-separated text.</code></pre>
             </div>
           </details>
 
