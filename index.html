@@ -1012,7 +1012,7 @@
               <div class="tool-name">Anki Flashcard Creator</div>
               <span class="tool-type">Claude Skill</span>
             </div>
-            <p class="tool-desc">Upload a lecture PDF, get back an interactive HTML study guide PLUS a ready-to-import .apkg Anki deck. L2-first (learning-objective-first) Stanford Med workflow. The bottleneck of making cards is gone.</p>
+            <p class="tool-desc">Upload a lecture PDF, get back an interactive HTML study guide PLUS a ready-to-import .apkg Anki deck. L2-first Stanford Med workflow — prioritizes integration cards over rote recall. The bottleneck of making cards is gone.</p>
             <div class="tool-meta">
               <span class="tool-tag">Med Student</span>
               <span class="tool-tag">Spaced Repetition</span>
@@ -1114,7 +1114,7 @@
               <ul>
                 <li>Works best on lectures 50–200 slides long</li>
                 <li>For .pptx files: export to PDF first</li>
-                <li>Always include learning objectives — the skill is L2-first (learning-objective-first) and uses them as the spine of the study guide</li>
+                <li>Always include learning objectives — the skill uses them as the spine of the study guide and is anti-hallucination by design (it won't add facts from outside your slides)</li>
               </ul>
             </div>
           </details>
@@ -1151,9 +1151,13 @@
               <h4>What you need</h4>
               <ul>
                 <li>A free Claude account at <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> (generates the prompt)</li>
-                <li>A free Google AI Studio account at <a href="https://aistudio.google.com" target="_blank" rel="noopener">aistudio.google.com</a> (renders the image)</li>
+                <li>A free Gemini account at <a href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a> (renders the image with the Nano Banana model)</li>
                 <li>Optional: Anki to attach the image to a flashcard</li>
               </ul>
+
+              <div class="beginner-note">
+                <strong>What is Nano Banana?</strong> "Nano Banana" is Google's nickname for Gemini's image generation model (Gemini 2.5 Flash Image). It produces sharper, more consistent images than other free image generators. You access it inside the regular Gemini chat by including the phrase <code>using nanobanana</code> at the start of your image prompt.
+              </div>
 
               <h4>How to use — Easiest path</h4>
               <ol>
@@ -1164,15 +1168,23 @@
                 <li>Type: <em>"Please read the entire SKILL.md and generate a mnemonic image prompt for the term: [YOUR MEDICAL TERM]."</em></li>
                 <li>Claude returns a syllable breakdown plus a detailed image prompt.</li>
                 <li>Copy the image prompt.</li>
-                <li>Go to <a href="https://aistudio.google.com" target="_blank" rel="noopener">Google AI Studio</a>, switch to Imagen / image generation.</li>
-                <li>Paste the prompt and generate. Save the image.</li>
+                <li>Open <a href="https://gemini.google.com" target="_blank" rel="noopener">Gemini</a> and start a new chat.</li>
+                <li>Paste this format into Gemini:
+                  <pre><code>using nanobanana [paste Claude's image prompt here]</code></pre>
+                </li>
+                <li>Gemini generates the image with the Nano Banana model. Download and save it.</li>
               </ol>
 
               <h4>Why two AI tools?</h4>
               <ul>
-                <li><strong>Claude</strong> is better at the linguistic puzzle (breaking syllables, encoding meaning)</li>
-                <li><strong>Gemini's Imagen</strong> produces sharper, more detailed medical illustrations</li>
+                <li><strong>Claude</strong> is better at the linguistic puzzle (breaking the term into syllables, encoding meaning into a scene)</li>
+                <li><strong>Gemini's Nano Banana</strong> produces sharper, more detailed medical illustrations than Claude's built-in image generation</li>
               </ul>
+
+              <h4>The exact prompt format I use in Gemini</h4>
+              <p>Every time, with no exceptions:</p>
+              <pre><code>using nanobanana [Claude's image prompt]</code></pre>
+              <p>The <code>using nanobanana</code> prefix tells Gemini to invoke the Nano Banana image model specifically. Without it, you may get a worse image generator or a text-only response.</p>
 
               <h4>Example: Ramsay Hunt Syndrome</h4>
               <p>The output prompt: <em>Gordon Ramsay in a brown hunting outfit, holding cranial nerve VII like a fishing rod, standing in a forest filled with chickenpox-virus pumpkins. His ear has painful red vesicles. A clock reads "72 hours."</em></p>
@@ -1195,7 +1207,15 @@
               </div>
 
               <h4>What it does</h4>
-              <p>Upload a medical lecture PDF and get back two things: (1) an interactive HTML study guide for first-pass learning, and (2) a ready-to-import .apkg Anki deck for spaced repetition. The skill uses the L2-first (learning-objective-first) Stanford Med workflow: it derives the study guide first, then generates Anki cards directly from that guide so the cards stay aligned with what was actually taught.</p>
+              <p>Upload a medical lecture PDF and get back two things: (1) an interactive HTML study guide for first-pass learning, and (2) a ready-to-import .apkg Anki deck for spaced repetition. The skill uses the <strong>L2-first</strong> Stanford Med workflow (explained below).</p>
+
+              <h4>What "L2-first" means</h4>
+              <p>L1 and L2 refer to <em>cognitive levels</em> of a learning objective, not year of medical school:</p>
+              <ul>
+                <li><strong>L1 (Level 1)</strong> — Pure recall. Isolated facts. <em>"What is pyknosis?"</em></li>
+                <li><strong>L2 (Level 2)</strong> — Integration and relationships. <em>"What is the cascade of nuclear changes in necrosis: pyknosis → karyorrhexis → karyolysis?"</em></li>
+              </ul>
+              <p>The skill prioritizes L2 cards (70–85% of every deck) and uses L1 cards sparingly (5–15%) only when a fact is truly irreducible. Why? Because L2 cards force you to retrieve the underlying L1 fact <em>and</em> the relationship that makes it meaningful — you learn the disease, not the slide. The deck stays lean, retention goes up, leech cards go down.</p>
 
               <div class="download-box">
                 <div class="download-box-text">
@@ -1314,18 +1334,28 @@
                 <li>Save the image to your notes or Anki</li>
               </ol>
 
-              <h4>Starter prompt</h4>
+              <h4>Starter prompt (anti-hallucination)</h4>
               <pre><code>I'm studying for medical school and the attached lecture covers [TOPIC].
 I need a diagram that helps me visualize this.
 
-Please generate an image that:
+CRITICAL ANTI-HALLUCINATION RULES:
+- Only use facts, terms, drugs, mechanisms, and categories that appear in the attached lecture.
+- DO NOT add information from textbooks, board prep, USMLE resources, or your general medical knowledge.
+- DO NOT invent or extrapolate relationships, percentages, or values that aren't in the lecture.
+- Preserve the lecturer's exact terminology and capitalization.
+- If a relationship is unclear from the lecture, leave it out — do not guess.
+- Every label in the diagram must be traceable to a specific slide or sentence in the lecture.
+
+Now generate an image that:
 1. Identifies the 3–5 most important categories in the lecture
 2. Shows the relationships between them spatially (arrows, hierarchies, branches)
 3. Uses color-coding so each category is distinct
-4. Includes the key terms inside each category
+4. Includes only the key terms that appear in the lecture
 5. Avoids being too dense — readability matters more than completeness
 
-Output: a single clear diagram, not a wall of text. Use a clean medical textbook style.</code></pre>
+Output: a single clear diagram, not a wall of text. Use a clean medical textbook style.
+
+Before drawing, list which lecture slide(s) each category came from so I can verify.</code></pre>
 
               <h4>When it shines</h4>
               <ul>
