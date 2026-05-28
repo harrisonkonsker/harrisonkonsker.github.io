@@ -64,6 +64,51 @@
       padding: 0 1.5rem;
     }
 
+    /* TALK BANNER */
+    .talk-banner {
+      background: var(--ink);
+      color: var(--bg);
+      padding: 0.7rem 1.5rem;
+      text-align: center;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      position: relative;
+      z-index: 110;
+    }
+
+    .talk-banner a {
+      color: var(--bg);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--cardinal-soft);
+      text-decoration-thickness: 2px;
+      font-weight: 600;
+      margin-left: 0.5rem;
+      transition: color 0.2s ease;
+    }
+
+    .talk-banner a:hover {
+      color: #fff;
+      text-decoration-color: var(--bg);
+    }
+
+    .talk-banner-icon {
+      margin-right: 0.4rem;
+    }
+
+    @media (max-width: 540px) {
+      .talk-banner {
+        font-size: 0.78rem;
+        padding: 0.6rem 1rem;
+        line-height: 1.5;
+      }
+      .talk-banner a {
+        display: inline-block;
+        margin-left: 0.3rem;
+      }
+    }
+
     /* NAV */
     nav.main {
       position: sticky;
@@ -905,6 +950,10 @@
 </head>
 <body>
 
+  <div class="talk-banner">
+    <span class="talk-banner-icon">🎙</span>Speaking at the Stanford AI in Medical Education Symposium · June 2026 <a href="#toolkit">Jump to the AI Toolkit →</a>
+  </div>
+
   <nav class="main">
     <div class="nav-inner">
       <a href="#top" class="brand">
@@ -913,8 +962,8 @@
       </a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
         <li><a href="#toolkit">AI Toolkit</a></li>
+        <li><a href="#research">Research</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -933,7 +982,8 @@
             I am an MD Candidate at Stanford School of Medicine, concentrating in Artificial Intelligence and Computational Biomedicine. I work at the <a href="https://healthrex.stanford.edu/" target="_blank" rel="noopener">HealthRex Lab</a> with Dr. Jonathan Chen, where I build machine learning systems that support real-time clinical decision-making.
           </p>
           <div class="hero-ctas">
-            <a href="#research" class="btn btn-primary">View research <span class="arrow">→</span></a>
+            <a href="#toolkit" class="btn btn-primary">View the AI Toolkit <span class="arrow">→</span></a>
+            <a href="#research" class="btn btn-ghost">View research</a>
             <a href="#about" class="btn btn-ghost">Read about me</a>
           </div>
         </div>
