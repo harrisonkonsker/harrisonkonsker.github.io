@@ -16,13 +16,13 @@ You give it a medical term. It returns:
 
 ## What you need
 
-- **Claude** (Claude.ai or Claude Code) — to generate the prompt
-- **Gemini** (Google AI Studio, free) — to generate the image
+- **Claude** (Claude.ai or Claude Code): to generate the prompt
+- **Gemini** (Google AI Studio, free): to generate the image
 - *Optional:* an Anki account to save the image with your flashcard
 
 ## How to use
 
-### Step 1 — Generate the prompt in Claude
+### Step 1: Generate the prompt in Claude
 
 Paste this prompt into Claude:
 
@@ -39,22 +39,22 @@ NAME BREAKDOWN: [syllable-by-syllable sound-alikes]
 MEANING ENCODING: [what aspects of the meaning to show in the scene]
 IMAGE PROMPT: [a single descriptive paragraph for an AI image generator]
 
-The prompt should be specific, surprising, and slightly absurd — memory works better when scenes are unusual.
+The prompt should be specific, surprising, and slightly absurd. Memory works better when scenes are unusual.
 
 Medical term: [PASTE TERM HERE]
 ```
 
 Replace `[PASTE TERM HERE]` with your term. Claude returns the full breakdown plus an image prompt.
 
-### Step 2 — Generate the image in Gemini
+### Step 2: Generate the image in Gemini
 
 1. Go to [Google AI Studio](https://aistudio.google.com)
 2. Switch to the **Imagen** model (or use Gemini's image generation)
 3. Paste the IMAGE PROMPT from Claude's output
-4. Generate — usually takes ~10 seconds
+4. Generate: usually takes ~10 seconds
 5. Download the image you like best
 
-### Step 3 — Save it
+### Step 3: Save it
 
 - **Anki:** attach the image to your flashcard's back side
 - **Notion / Obsidian:** drop it into your notes
@@ -83,10 +83,10 @@ This single scene encodes:
 
 ## Tips
 
-- **Be specific** — vague image prompts produce vague images. Describe textures, colors, lighting.
-- **Embrace absurdity** — your brain remembers absurd before plausible
-- **One scene per term** — don't try to encode multiple terms in one image
-- **Save the prompt + image together** — when you want to remember why the image works, you'll need the syllable breakdown
+- **Be specific**: vague image prompts produce vague images. Describe textures, colors, lighting.
+- **Embrace absurdity**: your brain remembers absurd before plausible
+- **One scene per term**: don't try to encode multiple terms in one image
+- **Save the prompt + image together**: when you want to remember why the image works, you'll need the syllable breakdown
 
 ---
 

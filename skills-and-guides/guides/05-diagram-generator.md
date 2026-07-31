@@ -2,7 +2,7 @@
 
 > **If the lecture doesn't click, draw it.** Upload the lecture to ChatGPT, get back a custom diagram organized by the most important categories of the content.
 
-Not a custom skill — a workflow built around ChatGPT's image generation capability.
+Not a custom skill: a workflow built around ChatGPT's image generation capability.
 
 ## What it does
 
@@ -28,13 +28,13 @@ Please generate an image that:
 2. Shows the relationships between them spatially (arrows, hierarchies, branches)
 3. Uses color-coding so each category is distinct
 4. Includes the key terms inside each category
-5. Avoids being too dense — readability matters more than completeness
+5. Avoids being too dense: readability matters more than completeness
 
 Output: a single clear diagram, not a wall of text. Use a clean medical textbook style.
 ```
 
-4. **Refine** — if the first diagram isn't clear enough, say:
-   - "Simplify this — show only the pathophysiology"
+4. **Refine**: if the first diagram isn't clear enough, say:
+   - "Simplify this: show only the pathophysiology"
    - "Add the drug targets at each step"
    - "Use a flowchart layout instead of a hub-and-spoke"
 
@@ -42,10 +42,10 @@ Output: a single clear diagram, not a wall of text. Use a clean medical textbook
 
 ## When to use it
 
-- **Mechanism-heavy topics** — biochemistry cascades, immune responses, drug pathways
-- **Differential diagnosis trees** — when distinguishing between similar conditions
-- **Anatomy with relationships** — what connects to what, what drains where
-- **Treatment algorithms** — first-line, second-line, contraindications
+- **Mechanism-heavy topics**: biochemistry cascades, immune responses, drug pathways
+- **Differential diagnosis trees**: when distinguishing between similar conditions
+- **Anatomy with relationships**: what connects to what, what drains where
+- **Treatment algorithms**: first-line, second-line, contraindications
 
 ## Example use case
 
@@ -57,10 +57,10 @@ Output: a single clear diagram, not a wall of text. Use a clean medical textbook
 
 ## Tips
 
-- **Be specific about layout** — "flowchart," "hub-and-spoke," "Venn diagram," "decision tree" all produce different outputs
-- **Don't try to fit everything** — diagrams fail when overloaded; ask for the 3–5 most important categories
-- **Compare versions** — generate 2–3 variants and pick the one that clicks
-- **Add to your Anki cards** — image cards are often easier to remember than text cards
+- **Be specific about layout**: "flowchart," "hub-and-spoke," "Venn diagram," "decision tree" all produce different outputs
+- **Don't try to fit everything**: diagrams fail when overloaded; ask for the 3–5 most important categories
+- **Compare versions**: generate 2–3 variants and pick the one that clicks
+- **Add to your Anki cards**: image cards are often easier to remember than text cards
 
 ## Why this works
 

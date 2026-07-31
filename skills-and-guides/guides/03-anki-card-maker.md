@@ -24,7 +24,7 @@ Takes a lecture slide (or full lecture PDF) and returns Anki-ready flashcards wi
 
 ## How to use
 
-### Step 1 — Generate cards from a slide
+### Step 1: Generate cards from a slide
 
 Paste this prompt into Claude with a lecture slide attached:
 
@@ -60,7 +60,7 @@ A: [answer]
 Output as many cards as the slide needs. No preamble.
 ```
 
-### Step 2 — Import to Anki
+### Step 2: Import to Anki
 
 **Quick path (copy-paste):**
 1. Open Anki, create a new deck
@@ -79,14 +79,14 @@ Output as many cards as the slide needs. No preamble.
 
 ## Tips
 
-- Run the skill on **one lecture at a time** — quality drops on giant batches
-- Review the first 10 cards Claude generates before approving the rest — calibrate the model to your style
+- Run the skill on **one lecture at a time**: quality drops on giant batches
+- Review the first 10 cards Claude generates before approving the rest: calibrate the model to your style
 - Add the lecture title to each card as a tag (`#cardio-lecture-3`) so you can filter by topic later
 - Combine with the **Lecture Distiller** for best results: distill → make cards from the distilled output
 
 ## Why this works with Anki specifically
 
-Anki uses **spaced repetition** — the algorithm shows you cards at the moment your brain is about to forget them. Day 1, Day 3, Day 10, Day 25. Cards you find easy come back less often; cards you struggle with come back more often.
+Anki uses **spaced repetition**: the algorithm shows you cards at the moment your brain is about to forget them. Day 1, Day 3, Day 10, Day 25. Cards you find easy come back less often; cards you struggle with come back more often.
 
 The bottleneck has always been making the cards. This skill removes it.
 

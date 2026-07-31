@@ -2,7 +2,7 @@
 
 > **Reading is great. Until it isn't.** Sometimes you want to learn while you drive, walk, or work out. This workflow turns any lecture into a two-host conversational podcast.
 
-Not a custom skill — a workflow built around Google's free [NotebookLM](https://notebooklm.google.com).
+Not a custom skill: a workflow built around Google's free [NotebookLM](https://notebooklm.google.com).
 
 ## What it does
 
@@ -35,17 +35,17 @@ This is the killer feature. It moves you from passive listening to active questi
 
 ## When to use it
 
-- **Pre-lecture priming** — listen on the way to class
-- **Drive time** — convert your commute into review
-- **Workout** — gym sessions become low-stakes review
-- **Walking** — outdoor walks instead of caffeine for an afternoon slump
+- **Pre-lecture priming**: listen on the way to class
+- **Drive time**: convert your commute into review
+- **Workout**: gym sessions become low-stakes review
+- **Walking**: outdoor walks instead of caffeine for an afternoon slump
 
 ## Tips
 
-- **Upload multiple sources** — if your lecture has a companion textbook chapter, upload both. The hosts will reference each.
-- **Customize the focus** — before generating, you can prompt the hosts to "focus on the clinical correlations and skip the history of discovery"
-- **Speed it up** — 1.5x or 2x playback works well once you're familiar with the topic
-- **Pair with active recall** — listen once passively, then test yourself before re-listening
+- **Upload multiple sources**: if your lecture has a companion textbook chapter, upload both. The hosts will reference each.
+- **Customize the focus**: before generating, you can prompt the hosts to "focus on the clinical correlations and skip the history of discovery"
+- **Speed it up**: 1.5x or 2x playback works well once you're familiar with the topic
+- **Pair with active recall**: listen once passively, then test yourself before re-listening
 
 ## Why this beats recorded lectures
 

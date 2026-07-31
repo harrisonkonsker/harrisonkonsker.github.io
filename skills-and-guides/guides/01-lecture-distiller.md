@@ -22,7 +22,7 @@ A custom Claude skill that takes a dense medical lecture (PDF) and splits it int
 
 ## How to use
 
-### Option A — Claude Code (most powerful)
+### Option A: Claude Code (most powerful)
 
 1. Save the skill files to `~/.claude/skills/lecture-distiller/SKILL.md`
 2. Restart Claude Code
@@ -30,7 +30,7 @@ A custom Claude skill that takes a dense medical lecture (PDF) and splits it int
    > "Use the lecture-distiller skill on this lecture."
 4. Claude returns a formatted study guide with all four sections.
 
-### Option B — Claude.ai
+### Option B: Claude.ai
 
 1. Open a new Claude conversation
 2. Attach your lecture PDF
@@ -40,10 +40,10 @@ A custom Claude skill that takes a dense medical lecture (PDF) and splits it int
 You are my preclinical medical education study assistant.
 
 Take the attached lecture and organize it into a structured study guide with exactly these four sections:
-1. Pathophysiology — mechanisms, biological cascades, key cell types
-2. Clinical Presentation — signs, symptoms, classic patient story
-3. Differential Diagnosis — what else could it look like, how to distinguish
-4. Clinical Correlations — exam findings, lab values, imaging, board pearls
+1. Pathophysiology: mechanisms, biological cascades, key cell types
+2. Clinical Presentation: signs, symptoms, classic patient story
+3. Differential Diagnosis: what else could it look like, how to distinguish
+4. Clinical Correlations: exam findings, lab values, imaging, board pearls
 
 CRITICAL RULES:
 - Only use facts from the lecture. Do not add information from external sources.
@@ -60,7 +60,7 @@ Output the four sections in order. No preamble.
 
 - Works best on lectures 50–200 slides long
 - For .pptx files: export to PDF first
-- The skill is anti-hallucination by design — it only uses what's in your lecture, not board prep textbooks
+- The skill is anti-hallucination by design: it only uses what's in your lecture, not board prep textbooks
 - Save the output as a Google Doc or Notion page for later review
 
 ## Why it works
