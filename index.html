@@ -309,7 +309,7 @@
     /* RESEARCH CARDS */
     .research-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
       margin-top: 2.5rem;
     }
@@ -997,7 +997,7 @@
         <div class="prose">
           <p>Thirteen years ago, I was diagnosed with a rare and aggressive soft tissue tumor in my hand. Ten hospitals across the country insisted that intensive chemotherapy was my only option, until I arrived at Stanford Medicine. There, my care team proposed a revolutionary treatment: high-intensity focused ultrasound, a non-invasive procedure that uses sound waves to destroy tumor tissue. I became the sixth patient ever to receive it. That decision changed the course of my life.</p>
 
-          <p>Today, I have returned to Stanford as an MD Candidate, concentrating in Artificial Intelligence and Computational Biomedicine. I work in the HealthRex Lab with Dr. Jonathan Chen, where I build machine learning systems that support real-time clinical decision-making. My current projects predict antibiotic resistance in the emergency department, flag missed ovarian torsion, and identify patients at risk during IVF. The thread across this work is the same: using clinical data to support the highest-stakes decisions in medicine. I'm also a VC Fellow at ARTIS Ventures, where I work with the investment team to evaluate early-stage companies in technology, biology, and health. It brings together entrepreneurship, science, and medicine, and I'm eager to learn how research evolves from a paper into a product that reaches patients.</p>
+          <p>Today, I have returned to Stanford as an MD Candidate, concentrating in Artificial Intelligence and Computational Biomedicine. I work in the HealthRex Lab with Dr. Jonathan Chen, where I build machine learning systems that support real-time clinical decision-making. My current projects separate true urinary tract infections from false alarms in the medical record, predict success at each stage of IVF, and predict antibiotic resistance the moment a patient reaches the emergency department. The thread across this work is the same: using clinical data to support the highest-stakes decisions in medicine. I'm also a VC Fellow at ARTIS Ventures, where I work with the investment team to evaluate early-stage companies in technology, biology, and health. It brings together entrepreneurship, science, and medicine, and I'm eager to learn how research evolves from a paper into a product that reaches patients.</p>
 
           <p>My prior research bridges oncology, genomics, and translational science. I spent a year at the <strong>Weizmann Institute of Science</strong> investigating low-fidelity DNA polymerases as therapeutic targets in EGFR-mutated lung cancer, and four years at <strong>Stanford's Division of Thoracic Surgery</strong> with Dr. Joseph Shrager, where my CRISPR/Cas9 work formed the basis of my undergraduate Honors Thesis and a co-first-author manuscript currently under review at <em>Molecular Therapy: Oncology</em>.</p>
 
@@ -1011,9 +1011,21 @@
       <div class="container">
         <div class="section-eyebrow">Research</div>
         <h2>Current projects at HealthRex Lab.</h2>
-        <p class="research-lede">Working with Dr. Jonathan H. Chen at the Division of Computational Medicine to develop machine learning systems that support real-time clinical decision-making.</p>
+        <p class="research-lede">Working with Dr. Jonathan H. Chen in the Division of Computational Medicine to build machine learning for women’s health, reproductive medicine, and high-stakes clinical decisions.</p>
 
         <div class="research-grid">
+          <article class="research-card">
+            <span class="research-tag">Women’s Health</span>
+            <h3 style="margin-top: 1rem;">Teaching AI to Tell Real Infections Apart</h3>
+            <p>Urinary tract infections are the most common bacterial infection in women, yet a positive urine culture is only about 40% specific for a true infection, so a model trained on cultures learns to predict culture positivity, not real disease. I’m building an LLM pipeline that reads clinical notes to separate true UTIs from asymptomatic bacteriuria, with a focus on pregnant and older women, where mislabeling causes the most harm.</p>
+          </article>
+
+          <article class="research-card">
+            <span class="research-tag">Women’s Health</span>
+            <h3 style="margin-top: 1rem;">Predicting Success at Every Stage of IVF</h3>
+            <p>An IVF cycle unfolds as a sequence of high-stakes steps, and a patient’s odds shift as it progresses. Working with Stanford’s reproductive endocrinology division, I’m building a dynamic model on the clinic’s live-birth-outcome data that updates its prediction of success at each stage of the cycle, from stimulation through retrieval, fertilization, and transfer, so patients and clinicians can plan with the most current picture at every step.</p>
+          </article>
+
           <article class="research-card">
             <span class="research-tag">NIH R01</span>
             <h3 style="margin-top: 1rem;">Antibiotic Decision Support at the ED</h3>
@@ -1021,15 +1033,9 @@
           </article>
 
           <article class="research-card">
-            <span class="research-tag">Women's Health</span>
-            <h3 style="margin-top: 1rem;">The Overlooked Diagnosis: Ovarian Torsion</h3>
-            <p>Ovarian torsion is a commonly overlooked diagnosis, and a miss often costs the patient her ovary. We are leveraging Stanford's full hospital dataset to build a predictive tool that flags at-risk presentations in real time.</p>
-          </article>
-
-          <article class="research-card">
-            <span class="research-tag">Women's Health</span>
-            <h3 style="margin-top: 1rem;">Premature Ovulation in IVF</h3>
-            <p>Premature ovulation is a leading cause of IVF cycle cancellation and lost embryos, with no reliable way to flag at-risk patients before stimulation. We are building a predictive model on Stanford's live-birth-outcome dataset to identify high-risk cycles before they begin.</p>
+            <span class="research-tag">AI Evaluation</span>
+            <h3 style="margin-top: 1rem;">Does AI Match the Specialist?</h3>
+            <p>Before an AI tool reaches patients, someone has to test whether it truly matches expert judgment. I coordinate a study comparing an AI consult tool’s recommendations against practicing physicians on synthetic clinical cases, measuring where it helps, where it falls short, and whether it changes real decisions.</p>
           </article>
         </div>
       </div>
@@ -1039,8 +1045,8 @@
     <section class="block" id="toolkit">
       <div class="container">
         <div class="section-eyebrow">Toolkit</div>
-        <h2>Five workflows for AI in medical education.</h2>
-        <p class="research-lede">These are the tools I use to study medicine at Stanford. Three are custom Claude skills I built — each can be downloaded and used in your own personal Claude account. Two are workflows around tools you probably already have. All free to use, modify, and share. <strong>Never used AI for studying? This page is built for you.</strong> Click any tool below for step-by-step instructions.</p>
+        <h2>Seven workflows for AI in medical education.</h2>
+        <p class="research-lede">These are the tools I use to study medicine at Stanford. Three are custom Claude skills I built — each can be downloaded and used in your own personal Claude account. Four are workflows you can follow with any model. All free to use, modify, and share. <strong>Never used AI for studying? This page is built for you.</strong> Click any tool below for step-by-step instructions.</p>
 
         <div class="toolkit-grid">
 
@@ -1117,6 +1123,36 @@
               <span class="tool-tag">Free Tool</span>
             </div>
             <a href="#tool-diagram" class="tool-link">View instructions <span class="arrow">↓</span></a>
+          </article>
+
+          <!-- TOOL 6: Practice Question Builder -->
+          <article class="tool-card">
+            <div class="tool-header">
+              <div class="tool-name">Practice Question Builder</div>
+              <span class="tool-type">Claude Workflow</span>
+            </div>
+            <p class="tool-desc">Turn a lecture's learning objectives into a practice exam that cannot skip anything. A coverage gate catches the plain mechanism and definition objectives an AI would otherwise pass over, which are the ones that show up on exams.</p>
+            <div class="tool-meta">
+              <span class="tool-tag">Med Student</span>
+              <span class="tool-tag">Exam Prep</span>
+              <span class="tool-tag">Any Model</span>
+            </div>
+            <a href="#tool-practice-questions" class="tool-link">View instructions <span class="arrow">↓</span></a>
+          </article>
+
+          <!-- TOOL 7: Virtual Patient Simulator -->
+          <article class="tool-card">
+            <div class="tool-header">
+              <div class="tool-name">Virtual Patient Simulator</div>
+              <span class="tool-type">Claude Workflow</span>
+            </div>
+            <p class="tool-desc">Interview a patient who has the disease you just studied. You ask the questions, they answer in their own words, and afterward you find out what you never thought to ask. Practice eliciting findings, not just recognizing them.</p>
+            <div class="tool-meta">
+              <span class="tool-tag">Med Student</span>
+              <span class="tool-tag">History Taking</span>
+              <span class="tool-tag">Any Model</span>
+            </div>
+            <a href="#tool-virtual-patient" class="tool-link">View instructions <span class="arrow">↓</span></a>
           </article>
 
         </div>
@@ -1442,6 +1478,159 @@ Before drawing, list which lecture slide(s) each category came from so I can ver
             </div>
           </details>
 
+          <!-- INSTRUCTION 6: Practice Question Builder -->
+          <details class="tool-detail" id="tool-practice-questions">
+            <summary>
+              <span class="detail-summary-left">
+                <span class="detail-tool-name">Practice Question Builder</span>
+                <span class="detail-tool-type">Claude Workflow</span>
+              </span>
+              <span class="detail-toggle">+</span>
+            </summary>
+            <div class="detail-body">
+              <h4>What it does</h4>
+              <p>Writes practice questions from your lecture slides with one hard rule: every learning objective gets covered, whether or not it looks interesting. When you ask an AI for practice questions, it gravitates toward the memorable clinical material and quietly skips the plain mechanism and definition objectives. Those are exactly the ones that show up on exams.</p>
+
+              <h4>What you need</h4>
+              <ul>
+                <li>Any AI account (Claude, ChatGPT, or Gemini)</li>
+                <li>Your lecture PDF and its list of learning objectives</li>
+              </ul>
+
+              <h4>Why the structure matters</h4>
+              <p>Most people ask "write me practice questions about this lecture" and take what they get. The output looks good, so you trust it. The gap only becomes visible on exam day. The fix is not a better prompt, it is a validation gate: generate the questions, then check them against the objectives and refuse the batch if any objective is missing.</p>
+
+              <h4>Step 1: Extract the objectives verbatim</h4>
+              <pre><code>Extract every learning objective from this lecture, word for word.
+Number them. Do not summarize, merge, or reword them.
+If an objective has numbered sub-parts, keep each sub-part.</code></pre>
+              <p>Paraphrasing collapses distinct objectives together, and merged objectives are how coverage gaps start.</p>
+
+              <h4>Step 2: Generate with a per-objective quota</h4>
+              <pre><code>For each learning objective, write 4 to 6 practice questions:
+at least 3 multiple choice and at least 1 free response.
+
+Scale the count to the content: 4 questions for a single concept on
+1-2 slides, 5 for a multi-part objective on 3-5 slides, 6 for a
+multi-step or matrix topic on 6 or more slides.
+
+Rules:
+- Every question must be answerable from the slides. Cite the slide number.
+- Each objective needs at least one recall/understand question AND one
+  apply/analyze question.
+- You may not skip an objective for being "too basic" or "just a definition."
+- Every multiple-choice question needs a one-line rationale for each option,
+  explaining why the wrong ones are wrong.</code></pre>
+
+              <h4>Step 3: Run the coverage gate (the step people skip)</h4>
+              <p>Start a <strong>fresh</strong> conversation, attach the objectives and the questions, and ask:</p>
+              <pre><code>Here are the learning objectives and the practice questions.
+For each objective, list how many questions cover it.
+Flag any objective with fewer than 4 questions or zero free-response
+questions. Do not fix anything. Just report the table.</code></pre>
+              <p>Use a new conversation so the model audits the work instead of defending it. Send the gaps back for regeneration, then re-audit until the table is clean.</p>
+
+              <h4>Step 4: Check the questions are grounded</h4>
+              <pre><code>For each question, quote the exact line or figure from the slides that
+supports the correct answer. If you cannot find slide support, mark the
+question UNGROUNDED.</code></pre>
+              <p>Anything ungrounded is either invented or pulled from outside knowledge. This is the highest-value check in the workflow, because a plausible wrong question teaches you a plausible wrong fact.</p>
+
+              <h4>Step 5: Fix the quality tells</h4>
+              <pre><code>Check for: answers clustering on one letter (spread them); the correct
+answer being noticeably longer than the distractors (equalize the lengths);
+parenthetical hints that give away the answer (remove them); two options
+that mean the same thing.</code></pre>
+              <p>Length bias and letter bias are the two habits that make AI-written questions trivially easy in a way that flatters you during review and fails you on the exam.</p>
+
+              <h4>Tips</h4>
+              <ul>
+                <li>Keep the objectives and the questions in separate files, so the audit is easier to run honestly</li>
+                <li>Log what you get wrong, and feed that list in next time so your weak areas get extra questions</li>
+                <li>Free response is worth the effort: multiple choice lets you recognize the answer, free response makes you produce it</li>
+                <li>Do the audit in a new chat every time. A model that just wrote 25 questions is a poor judge of whether it covered everything</li>
+              </ul>
+
+              <h4>Before you upload</h4>
+              <p>Lecture slides may be proprietary to your school, and some clinical material contains protected health information. Confirm with your course director or professor before putting a lecture into an AI tool, and never upload anything with patient identifiers.</p>
+
+              <p><a href="skills-and-guides/guides/06-practice-question-builder.md">Read the full guide →</a></p>
+            </div>
+          </details>
+
+          <!-- INSTRUCTION 7: Virtual Patient Simulator -->
+          <details class="tool-detail" id="tool-virtual-patient">
+            <summary>
+              <span class="detail-summary-left">
+                <span class="detail-tool-name">Virtual Patient Simulator</span>
+                <span class="detail-tool-type">Claude Workflow</span>
+              </span>
+              <span class="detail-toggle">+</span>
+            </summary>
+            <div class="detail-body">
+              <h4>What it does</h4>
+              <p>Turns a lecture into a patient you can interview. You ask the questions, the patient answers in their own words, and at the end you get feedback on what you missed. Six steps can teach you the facts about a disease. None of them teach you to sit across from the person who has it.</p>
+
+              <h4>What you need</h4>
+              <ul>
+                <li>Any AI account (Claude, ChatGPT, or Gemini). Voice mode helps</li>
+                <li>A lecture PDF, or just the name of a condition</li>
+              </ul>
+
+              <h4>Why this is different from a quiz</h4>
+              <p>A practice question hands you the findings and asks for the diagnosis. A real patient hands you nothing. They tell you their ear hurts. Whether you ever learn about the rash, the facial weakness, or the hearing change depends entirely on what you think to ask. That gap between recognizing information and eliciting it is where most of the actual skill of medicine lives.</p>
+
+              <h4>Step 1: Set up the patient</h4>
+              <pre><code>You are going to role-play as a patient so I can practice taking a history.
+
+Pick one condition from this lecture and build a realistic patient who has
+it. Give them an age, an occupation, and a reason they came in today.
+
+Rules:
+- Stay in character as the patient. Answer only what I ask.
+- Do not tell me the diagnosis, and do not volunteer findings I have not
+  asked about.
+- Describe symptoms the way a real person would, not in medical terms.
+  If it burns, say it burns; do not say "dysesthesia."
+- If I ask a vague question, give a vague answer, the way a real patient would.
+- Do not coach me or hint that I am missing something.
+
+Start with one sentence about why you came in today, then wait for my questions.</code></pre>
+              <p>The "do not volunteer" rule is what makes this useful. Without it, the model dumps the full case in the first reply and there is nothing left to practice.</p>
+
+              <h4>Step 2: Take the history</h4>
+              <p>Interview them. Ask open questions first, then narrow. Push on anything vague. You will feel the difference immediately: you have to <em>decide</em> what to ask. If you never ask about hearing, you never find out about the hearing change, and that omission is the lesson. When you are ready, state your diagnosis and your reasoning before asking for feedback. Committing first is what makes the feedback land.</p>
+
+              <h4>Step 3: Ask for feedback</h4>
+              <pre><code>Stop role-playing. I think this is [your diagnosis] because [your reasoning].
+
+Now give me feedback as an attending:
+- What was the actual diagnosis?
+- Which findings did I uncover, and which did I miss because I never asked?
+- What specific questions would have found the ones I missed?
+- What was the highest-yield question I never asked?</code></pre>
+              <p>The most useful line is the last one. There is usually a single question that would have cracked the case, and knowing which one it was transfers to the next patient.</p>
+
+              <h4>Step 4: Run it again with a twist</h4>
+              <pre><code>Same condition, new patient. This time make the presentation atypical,
+and do not tell me how it differs.</code></pre>
+              <p>The classic presentation is the one you will recognize anyway. The atypical version is the one that will fool you on the ward.</p>
+
+              <h4>Tips</h4>
+              <ul>
+                <li>Interview out loud if you can. Typing lets you compose a careful question; speaking forces you to ask it the way you would in a room</li>
+                <li>Do not peek. Asking "am I close?" mid-interview ruins it</li>
+                <li>Ask for the hard version: a patient who is a poor historian, is anxious, minimizes symptoms, or answers a different question than the one you asked</li>
+                <li>Run the same disease three different ways to learn the range of how it shows up</li>
+              </ul>
+
+              <h4>Before you upload</h4>
+              <p>Confirm with your course director or professor before uploading a lecture, and never upload anything containing patient identifiers. Ask for a <em>generated</em> patient rather than pasting in a real case. The simulated patient is also not a real patient: if a presentation does not hang together clinically, check your slides. This builds the habit of asking systematically, but it does not replace standardized patients, clinical skills coursework, or real patient contact.</p>
+
+              <p><a href="skills-and-guides/guides/07-virtual-patient-simulator.md">Read the full guide →</a></p>
+            </div>
+          </details>
+
         </div>
 
         <div class="toolkit-cta">
@@ -1640,7 +1829,7 @@ Before drawing, list which lecture slide(s) each category came from so I can ver
     <section class="block" id="service">
       <div class="container">
         <div class="section-eyebrow">Service &amp; Community</div>
-        <h2>Care beyond the code.</h2>
+        <h2>Staying close to patients.</h2>
         <p class="research-lede">Alongside research, I stay close to patients and community through clinical volunteering, teaching, and student leadership.</p>
 
         <div class="honors-grid">
