@@ -1,10 +1,12 @@
 # The Konsker Medical AI Toolkit
 
-> Five workflows that turn AI from a chatbot into a study system.
+> Seven workflows that turn AI from a chatbot into a study system.
 
 These are the tools I use to study medicine at Stanford. They are free to use, modify, and share.
 
-## The five workflows
+Three are downloadable Claude skills, in [`../skills/`](../skills/). The rest are workflow guides you can follow with any model.
+
+## The seven workflows
 
 ### 1. [Lecture Distiller](01-lecture-distiller.md) — Custom Claude Skill
 
@@ -27,6 +29,14 @@ Turn any lecture into a 15-minute conversational podcast you can listen to on th
 ### 5. [Lecture-to-Diagram](05-diagram-generator.md) — ChatGPT Workflow
 
 When the lecture doesn't click, generate a visual diagram organized by the most important categories of the content.
+
+### 6. [Practice Question Builder](06-practice-question-builder.md) — Claude Workflow
+
+Turn a lecture's learning objectives into a practice exam that cannot skip anything. A coverage gate catches the plain mechanism and definition objectives an AI would otherwise pass over.
+
+### 7. [Virtual Patient Simulator](07-virtual-patient-simulator.md) — Claude Workflow
+
+Interview a patient who has the disease you just studied. You ask the questions, they answer in their own words, and you find out afterward what you never thought to ask.
 
 ---
 
