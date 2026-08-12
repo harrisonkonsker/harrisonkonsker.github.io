@@ -2,7 +2,7 @@
 
 > Turn a lecture's learning objectives into a practice exam that cannot skip anything.
 
-**What it is:** A Claude workflow that writes practice questions from your lecture slides, with one hard rule: every learning objective gets covered, whether or not it looks interesting.
+**What it is:** A Claude workflow that writes practice questions from your lecture slides, with one hard rule: every learning objective gets covered, whether or not it looks interesting. It ends with an optional NBME-style section for anyone who wants harder, exam-style reasoning on top of the coverage.
 
 **The problem it solves:** When you ask an AI for practice questions, it gravitates toward the memorable clinical material and quietly skips the plain mechanism and definition objectives. Those are exactly the ones that show up on exams. This workflow makes skipping structurally impossible.
 
@@ -61,6 +61,50 @@ Ask for these specifically, because they show up constantly:
 > Check for: answers clustering on one letter (spread them); the correct answer being noticeably longer than the distractors (equalize the lengths); parenthetical hints that give away the answer (remove them); two options that mean the same thing.
 
 Length bias and letter bias are the two habits that make AI-written questions trivially easy in a way that flatters you during review and fails you on the exam.
+
+### Step 6: Add the optional NBME-style section (run this last)
+
+Everything above tests whether you learned the lecture. This section tests whether you can reason with it, in the style of a licensing exam: the diagnosis is never named, and the clues are present but not stated.
+
+Run it only after the coverage table from Step 3 is clean. The ordering matters. These questions are deliberately not slide-bound, so if you generate them earlier they inflate the per-objective counts and an objective can pass the gate on the strength of a question that was never grounded in the first place.
+
+> The objective-based questions are complete. Now add one final section titled "NBME-Style Questions (Optional Extra Practice)."
+>
+> Write 5 to 8 clinical vignette questions drawn from the objectives that involve a disease, presentation, diagnosis, or management decision. Do not try to cover every objective, and skip anything purely definitional. Under each question, note which objective it draws on.
+>
+> These questions are exempt from the slide-citation rule, but the concept being tested must still come from this lecture. You may add clinical detail the lecture did not provide in order to make the vignette realistic.
+
+Then the style rules, which are the substance of the whole thing:
+
+> Present every finding as raw data, never as an interpretation: "blood pressure 82/50 mm Hg" rather than "hypotensive," "temperature 38.9°C" rather than "febrile." Describe a rash instead of naming it. Never name the diagnosis, syndrome, organism, or drug class in the stem. Include two or three normal or incidental findings that do not point toward the answer. The answer must require combining at least two separate findings.
+>
+> Write exactly five options, all the same category, similar in length, in alphabetical order. Every distractor must be the correct answer to a slightly different vignette, and the rationale must name the finding a student would have to misread to choose it.
+>
+> Do not use "all of the above," "none of the above," negatively phrased stems, or absolute qualifiers.
+
+The raw-data rule does most of the work. "Hypotensive and febrile" is the model doing your reasoning for you before you get a chance.
+
+Have it open the section with this note, verbatim:
+
+> These questions are harder than the ones above, on purpose. They may draw on material from other lectures or from later in the course, and they include clinical details this lecture never covered, added to make the vignettes realistic. They are optional extra practice, not a preview of your exam. The objective-based questions above are the ones matched to what this lecture actually taught. If a question here needs something you have not learned yet, treat that as information about what is coming rather than a mistake.
+
+**Be clear with yourself about what this section is for.** It is practice for a licensing exam, not for your course exam. Many preclinical courses write their own questions that look nothing like NBME items. If your exam is written by your faculty, the objective-based questions above are the ones that matter, and this section is for later.
+
+### Optional: harden a question you already have
+
+Per-question work, so use it on the handful you care about rather than the whole batch. Open a **fresh** conversation and paste one question:
+
+> Act as an item reviewer and find every reason a student could answer this correctly without clinical reasoning. Check for the diagnosis being named or hinted, an interpretation given where raw data belongs, a pathognomonic buzzword the real exam would omit, the correct answer being longer or more hedged than the distractors, a distractor that is obviously wrong to someone who never studied, and grammatical cueing between the lead-in and the correct option. Report the tells. Do not rewrite anything yet.
+
+Then, in the same conversation:
+
+> Now rewrite it with those tells removed, and state plainly what the student must now infer that they were previously told outright.
+
+To go one level further, keep the vignette and move the question:
+
+> Convert this into a second-order question. Keep the same vignette, but ask about the mechanism, the next step, or the expected complication, so that identifying the diagnosis becomes an unstated intermediate step rather than the answer itself.
+
+First-order questions ask what the patient has. Real exam items often assume that and ask what follows.
 
 ---
 
