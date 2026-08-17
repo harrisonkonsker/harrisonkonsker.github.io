@@ -34,7 +34,7 @@ When the lecture doesn't click, generate a visual diagram organized by the most 
 
 Turn a lecture's learning objectives into a practice exam that cannot skip anything. A coverage gate catches the plain mechanism and definition objectives an AI would otherwise pass over.
 
-### 7. [Virtual Patient Simulator](07-virtual-patient-simulator.md): Claude Workflow
+### 7. [Virtual Patient Simulator](07-virtual-patient-simulator.md): ChatGPT Workflow
 
 Interview a patient who has the disease you just studied. You ask the questions, they answer in their own words, and you find out afterward what you never thought to ask.
 

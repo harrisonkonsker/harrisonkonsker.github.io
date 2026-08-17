@@ -1144,7 +1144,7 @@
           <article class="tool-card">
             <div class="tool-header">
               <div class="tool-name">Virtual Patient Simulator</div>
-              <span class="tool-type">Claude Workflow</span>
+              <span class="tool-type">ChatGPT Workflow</span>
             </div>
             <p class="tool-desc">Interview a patient who has the disease you just studied. You ask the questions, they answer in their own words, and afterward you find out what you never thought to ask. Practice eliciting findings, not just recognizing them.</p>
             <div class="tool-meta">
@@ -1563,64 +1563,54 @@ that mean the same thing.</code></pre>
             <summary>
               <span class="detail-summary-left">
                 <span class="detail-tool-name">Virtual Patient Simulator</span>
-                <span class="detail-tool-type">Claude Workflow</span>
+                <span class="detail-tool-type">ChatGPT Workflow</span>
               </span>
               <span class="detail-toggle">+</span>
             </summary>
             <div class="detail-body">
               <h4>What it does</h4>
-              <p>Turns a lecture into a patient you can interview. You ask the questions, the patient answers in their own words, and at the end you get feedback on what you missed. Six steps can teach you the facts about a disease. None of them teach you to sit across from the person who has it.</p>
+              <p>Turns a lecture into a patient you can interview. You ask the questions, the patient answers in their own words, and when you say "end encounter" the same model steps out of character and coaches you on what you missed. Six steps can teach you the facts about a disease. None of them teach you to sit across from the person who has it.</p>
 
               <h4>What you need</h4>
               <ul>
-                <li>Any AI account (Claude, ChatGPT, or Gemini). Voice mode helps</li>
+                <li>A ChatGPT account. Voice mode is the reason it was built there</li>
                 <li>A lecture PDF, or just the name of a condition</li>
               </ul>
 
               <h4>Why this is different from a quiz</h4>
               <p>A practice question hands you the findings and asks for the diagnosis. A real patient hands you nothing. They tell you their ear hurts. Whether you ever learn about the rash, the facial weakness, or the hearing change depends entirely on what you think to ask. That gap between recognizing information and eliciting it is where most of the actual skill of medicine lives.</p>
 
-              <h4>Step 1: Set up the patient</h4>
-              <pre><code>You are going to role-play as a patient so I can practice taking a history.
+              <h4>Step 1: Set the scene</h4>
+              <p>This is one prompt, not four. Both roles are loaded at the start, and a keyword moves between them. Attach the lecture, or just name the condition:</p>
+              <pre><code>Setup: Specialty [cardiology &middot; pulmonology &middot; neuro &middot; OB...], patient age,
+difficulty [beginner &middot; intermediate &middot; advanced], scope [history &middot; +exam &middot; +workup].
 
-Pick one condition from this lecture and build a realistic patient who has
-it. Give them an age, an occupation, and a reason they came in today.
+Role &amp; Goal: You're a realistic standardized patient during the encounter,
+and my coach afterward.
 
-Rules:
-- Stay in character as the patient. Answer only what I ask.
-- Do not tell me the diagnosis, and do not volunteer findings I have not
-  asked about.
-- Describe symptoms the way a real person would, not in medical terms.
-  If it burns, say it burns; do not say "dysesthesia."
-- If I ask a vague question, give a vague answer, the way a real patient would.
-- Do not coach me or hint that I am missing something.
+Ground Rules: Stay in character and talk like a real patient, not a textbook.
+Never volunteer clues, reveal the diagnosis, or invent facts.
 
-Start with one sentence about why you came in today, then wait for my questions.</code></pre>
-              <p>The "do not volunteer" rule is what makes this useful. Without it, the model dumps the full case in the first reply and there is nothing left to practice.</p>
+The Debrief: When I say "end encounter," step out and coach me: what to keep,
+stop, and improve, the high-yield questions I missed, and a brief differential.
+Start when I say I'm ready.</code></pre>
+              <p>Two rules carry most of the weight. <strong>Never volunteer clues</strong> is what leaves you something to practice; without it the model hands you the full case in its first reply. <strong>Talk like a real patient, not a textbook</strong> is what makes you translate: a patient says their face feels heavy, not that they have unilateral facial paresis. The Setup line is what makes this reusable, since changing four values gives you a different encounter rather than a different disease.</p>
 
               <h4>Step 2: Take the history</h4>
               <p>Interview them. Ask open questions first, then narrow. Push on anything vague. You will feel the difference immediately: you have to <em>decide</em> what to ask. If you never ask about hearing, you never find out about the hearing change, and that omission is the lesson. When you are ready, state your diagnosis and your reasoning before asking for feedback. Committing first is what makes the feedback land.</p>
 
-              <h4>Step 3: Ask for feedback</h4>
-              <pre><code>Stop role-playing. I think this is [your diagnosis] because [your reasoning].
-
-Now give me feedback as an attending:
-- What was the actual diagnosis?
-- Which findings did I uncover, and which did I miss because I never asked?
-- What specific questions would have found the ones I missed?
-- What was the highest-yield question I never asked?</code></pre>
-              <p>The most useful line is the last one. There is usually a single question that would have cracked the case, and knowing which one it was transfers to the next patient.</p>
-
-              <h4>Step 4: Run it again with a twist</h4>
-              <pre><code>Same condition, new patient. This time make the presentation atypical,
-and do not tell me how it differs.</code></pre>
-              <p>The classic presentation is the one you will recognize anyway. The atypical version is the one that will fool you on the ward.</p>
+              <h4>Step 3: Say "end encounter"</h4>
+              <pre><code>end encounter</code></pre>
+              <p>Two words. The model drops the patient and becomes your coach: what to keep, what to stop, what to improve, the high-yield questions you missed, and a brief differential.</p>
+              <p>The trigger is the design, not a convenience. Because both roles are loaded from the start, the switch happens on your command rather than the model's judgment, so it never breaks character early to reassure you. And because you choose when to end it, you have already committed to your own read of the case before any coaching arrives. Say your diagnosis and your reasoning out loud before the keyword.</p>
 
               <h4>Tips</h4>
               <ul>
                 <li>Interview out loud if you can. Typing lets you compose a careful question; speaking forces you to ask it the way you would in a room</li>
-                <li>Do not peek. Asking "am I close?" mid-interview ruins it</li>
+                <li>Do not peek. Asking "am I close?" mid-interview ruins it. Commit, then say "end encounter"</li>
                 <li>Ask for the hard version: a patient who is a poor historian, is anxious, minimizes symptoms, or answers a different question than the one you asked</li>
+                <li>Turn up the difficulty rather than changing the disease. The same condition at <em>advanced</em> is a different exercise</li>
+                <li>Run the classic, then ask for the same condition atypical with no warning about how it differs</li>
                 <li>Run the same disease three different ways to learn the range of how it shows up</li>
               </ul>
 

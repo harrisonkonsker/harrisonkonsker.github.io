@@ -2,7 +2,7 @@
 
 > Practice taking a history from a patient who has the disease you just studied.
 
-**What it is:** A Claude workflow that turns a lecture into a patient you can interview. You ask the questions, the patient answers in their own words, and at the end you get feedback on what you missed.
+**What it is:** A ChatGPT workflow that turns a lecture into a patient you can interview. You ask the questions, the patient answers in their own words, and when you say "end encounter" the same model steps out of character and coaches you on what you missed.
 
 **The problem it solves:** Six steps can teach you the facts about a disease. None of them teach you to sit across from the person who has it. Reading about a presentation is not the same as having to ask the right question to uncover it.
 
@@ -18,24 +18,23 @@ That gap between recognizing information and eliciting it is where most of the a
 
 ## The workflow
 
-### Step 1: Set up the patient
+This is one prompt, not four. Both roles are loaded at the start, and a keyword moves between them.
 
-Attach the lecture (or name the condition) and paste this:
+### Step 1: Set the scene
 
-> You are going to role-play as a patient so I can practice taking a history.
->
-> Pick one condition from this lecture and build a realistic patient who has it. Give them an age, an occupation, and a reason they came in today.
->
-> Rules:
-> - Stay in character as the patient. Answer only what I ask.
-> - Do not tell me the diagnosis, and do not volunteer findings I have not asked about.
-> - Describe symptoms the way a real person would, not in medical terms. If it burns, say it burns; do not say "dysesthesia."
-> - If I ask a vague question, give a vague answer, the way a real patient would.
-> - Do not coach me or hint that I am missing something.
->
-> Start with one sentence about why you came in today, then wait for my questions.
+Attach the lecture, or just name the condition, and paste this:
 
-The "do not volunteer" rule is what makes this useful. Without it, the model dumps the full case in the first reply and there is nothing left to practice.
+> **Setup:** Specialty [cardiology · pulmonology · neuro · OB…], patient age, difficulty [beginner · intermediate · advanced], scope [history · +exam · +workup].
+>
+> **Role & Goal:** You're a realistic standardized patient during the encounter, and my coach afterward.
+>
+> **Ground Rules:** Stay in character and talk like a real patient, not a textbook. Never volunteer clues, reveal the diagnosis, or invent facts.
+>
+> **The Debrief:** When I say "end encounter," step out and coach me: what to keep, stop, and improve, the high-yield questions I missed, and a brief differential. Start when I say I'm ready.
+
+Two rules carry most of the weight. **Never volunteer clues** is what leaves you something to practice; without it the model hands you the full case in its first reply. **Talk like a real patient, not a textbook** is what makes you translate: a patient says their face feels heavy, not that they have unilateral facial paresis.
+
+The Setup line is what makes this reusable. Change four values and it is a different encounter, so one prompt covers every rotation rather than one disease.
 
 ### Step 2: Take the history
 
@@ -43,33 +42,21 @@ Interview them. Ask open questions first, then narrow. Push on anything vague.
 
 You will feel the difference immediately: you have to *decide* what to ask. If you never ask about hearing, you never find out about the hearing change, and that omission is the lesson.
 
-When you are ready to commit, state your diagnosis and your reasoning out loud before asking for feedback. Committing first is what makes the feedback land.
+### Step 3: Say "end encounter"
 
-### Step 3: Ask for feedback
+Two words. The model drops the patient and becomes your coach: what to keep, what to stop, what to improve, the high-yield questions you missed, and a brief differential.
 
-> Stop role-playing. I think this is [your diagnosis] because [your reasoning].
->
-> Now give me feedback as an attending:
-> - What was the actual diagnosis?
-> - Which findings did I uncover, and which did I miss because I never asked?
-> - What specific questions would have found the ones I missed?
-> - What was the highest-yield question I never asked?
-
-The most useful line in that list is the last one. There is usually a single question that would have cracked the case, and knowing which one it was transfers to the next patient.
-
-### Step 4: Run it again with a twist
-
-> Same condition, new patient. This time make the presentation atypical, and do not tell me how it differs.
-
-The classic presentation is the one you will recognize anyway. The atypical version is the one that will fool you on the ward.
+The trigger is the design, not a convenience. Because both roles are loaded from the start, the switch happens on your command rather than the model's judgment, so it never breaks character early to reassure you. And because you choose when to end it, you have already committed to your own read of the case before any coaching arrives. Say your diagnosis and your reasoning out loud before the keyword. Committing first is what makes the feedback land.
 
 ---
 
 ## Tips
 
 - **Interview out loud if you can.** Use voice mode. Typing lets you compose a careful question; speaking forces you to ask it the way you would in a room.
-- **Do not peek.** The temptation to ask "am I close?" mid-interview ruins it. Commit to an answer first, then get feedback.
-- **Ask for the hard version.** Request a patient who is a poor historian, is anxious, minimizes symptoms, or answers a different question than the one you asked. That is closer to a real clinic than a cooperative patient.
+- **Do not peek.** The temptation to ask "am I close?" mid-interview ruins it. Commit to an answer, then say "end encounter."
+- **Turn up the difficulty rather than the disease.** The same condition at *advanced* is a different exercise from *beginner*, and it is closer to a real clinic than a new diagnosis is.
+- **Ask for the hard version.** Request a patient who is a poor historian, is anxious, minimizes symptoms, or answers a different question than the one you asked.
+- **Run the classic, then the atypical.** After a debrief, ask for the same condition with an atypical presentation and no warning about how it differs. The classic version is the one you would have recognized anyway.
 - **One condition, several patients.** Running the same disease three different ways teaches the range of how it shows up, which is what recognition actually requires.
 
 ---
@@ -82,4 +69,4 @@ The classic presentation is the one you will recognize anyway. The atypical vers
 
 **This is practice for the skill, not a substitute for the encounter.** It builds the habit of asking systematically. It does not replace standardized patients, clinical skills coursework, or real patient contact.
 
-**This works with any model.** Nothing here depends on a specific tool. The prompts work in Claude, ChatGPT, or Gemini.
+**Built in ChatGPT, but the prompt is not tied to it.** Voice mode is the reason it was built there. The prompt itself is plain text and works in Claude or Gemini too, though you may need to restate the ground rules if a model starts coaching you mid-encounter.
