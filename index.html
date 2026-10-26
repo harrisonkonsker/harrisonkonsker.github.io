@@ -363,6 +363,30 @@
     }
 
     /* TOOLKIT */
+    .video-feature {
+      margin: 0 0 2.75rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .video-frame {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: var(--ink);
+    }
+    .video-frame iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; border: 0;
+    }
+    .video-caption {
+      display: flex; justify-content: space-between; align-items: baseline;
+      gap: 1rem; flex-wrap: wrap;
+      padding: 1rem 1.25rem;
+      border-top: 1px solid var(--line);
+    }
+    .video-caption .video-title { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 1.1rem; }
+    .video-caption .video-note { color: var(--ink-soft); font-size: 0.9rem; }
     .toolkit-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -1048,6 +1072,16 @@
         <div class="section-eyebrow">Toolkit</div>
         <h2>Seven workflows for AI in medical education.</h2>
         <p class="research-lede">These are the tools I use to study medicine at Stanford. Three are custom Claude skills I built. Each can be downloaded and used in your own personal Claude account. Four are workflows you can follow with any model. All free to use, modify, and share. <strong>Never used AI for studying? This page is built for you.</strong> Click any tool below for step-by-step instructions.</p>
+
+        <figure class="video-feature">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/uprSMmQzSwI" title="1 Boring Lecture vs 7 AI Study Tools" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <figcaption class="video-caption">
+            <span class="video-title">One Lecture, Seven Ways to Study</span>
+            <span class="video-note">From my talk to Stanford's first-year class &middot; August 2026 &middot; 15 min</span>
+          </figcaption>
+        </figure>
 
         <div class="toolkit-grid">
 
@@ -1814,6 +1848,7 @@ Start when I say I'm ready.</code></pre>
         <div class="speaking-card">
           <div class="pub-title">Learning Medicine in the Age of AI: A Student-Built Framework</div>
           <div class="pub-venue">Stanford University School of Medicine, Practice of Medicine course &middot; August 2026 &middot; Invited talk to the entire first-year medical and physician assistant classes (~120 students)</div>
+          <a href="#toolkit" class="tool-link">Watch the talk <span class="arrow">&uarr;</span></a>
         </div>
         <div class="speaking-card">
           <div class="pub-title">From Chatbot to Workflow: Building AI Learning Tools for Medical Students</div>
